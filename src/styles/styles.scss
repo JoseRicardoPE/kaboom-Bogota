@@ -1,0 +1,46 @@
+/* =========================================
+   🔹 SASS CORE
+========================================= */
+@use 'sass:map';
+
+/* =========================================
+   🔹 VARIABLES Y HELPERS
+========================================= */
+@use 'functions' as *;
+@use 'vars' as v;
+@use 'mixins' as *;
+
+/* =========================================
+   🔹 RESETEO DE ESTILOS
+========================================= */
+@use 'reset';
+
+/* =========================================
+   🔥 BOOTSTRAP PERSONALIZADO
+========================================= */
+@use 'bootstrap/scss/bootstrap' with (
+    $body-color: v.$color-text-dark,
+
+    /* 🎨 Colores base */ $primary: map.get(v.$colors, primary),
+    $secondary: map.get(v.$colors, secondary),
+    /* 🔥 Sistema completo de colores */
+    $theme-colors: (
+        'primary': map.get(v.$colors, primary),
+        'secondary': map.get(v.$colors, secondary),
+        'warning': map.get(v.$colors, warning),
+        'dark': map.get(v.$colors, dark),
+        'light': map.get(v.$colors, light),
+    ),
+
+    /* 🅰️ Tipografía */ $font-family-base: v.$font-family-main,
+
+    /* 🔘 Bordes */ $border-radius: v.$f-radius-md,
+    $btn-border-radius: v.$f-radius-md,
+
+    /* 🔤 Tamaño base */ $font-size-base: v.$f-size-base
+);
+
+/* =========================================
+   🔹 ESTILOS PROPIOS (GANAN SIEMPRE)
+========================================= */
+@use 'base';

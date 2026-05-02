@@ -1,0 +1,47 @@
+@use 'sass:map';
+@use 'functions' as *;
+@use 'vars' as v;
+
+//? Mixin para asignar font-size en rem a partir de una variable en px
+@mixin font-size($size) {
+    font-size: calculateRem($size);
+}
+
+//? Mixin para asignar flexbox con parámetros personalizables
+@mixin flex-layout(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $gap: 0
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;  
+}
+
+//? Mixin para estilos de texto con parámetros personalizables
+@mixin text-style(
+  $size,
+  $weight,
+  $color,
+  $margin-bottom: 0,
+) {
+  @include font-size($size);
+  font-weight: $weight;
+  color: $color;
+  margin-bottom: $margin-bottom;
+}
+
+//? Mixin para los break point (media queries)
+@mixin respond($breakpoint) {
+  @if map.has-key(v.$breakpoints, $breakpoint) {
+    @media (min-width: map.get(v.$breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$breakpoint}' no existe.";
+  }
+}
+

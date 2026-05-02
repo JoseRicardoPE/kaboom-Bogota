@@ -1,0 +1,19 @@
+@if (media) {
+    <section class="hero-video">
+        <div class="hero-content">
+            <ng-content></ng-content>
+        </div>
+
+        <div class="hero-media">
+            <video 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                [attr.poster]="media.poster"
+            >
+                <source [src]="media.video" type="video/mp4" />
+            </video>
+        </div>
+    </section>
+}

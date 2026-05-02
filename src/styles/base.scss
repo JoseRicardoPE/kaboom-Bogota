@@ -1,0 +1,31 @@
+@use 'functions' as *;
+@use 'vars' as v;
+@use 'mixins' as *;
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/images/backgrounds/backgroundKaboom.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: v.$font-family-main;
+    overscroll-behavior: none;
+    touch-action: none;
+    line-height: v.$f-line-height-normal;
+    box-sizing: border-box;
+}
+
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    padding: calculateRem(32px) 0;
+}
+
+
+

@@ -1,0 +1,82 @@
+@use 'vars' as v;
+@use 'mixins' as *;
+@use 'functions' as *;
+
+.services-container {
+    @include flex-layout(column, flex-start, flex-start, v.$f-gap-md);
+}
+
+.services-content {
+    @include flex-layout(column, flex-start, flex-start, v.$f-gap-sm);
+    width: 100%;
+    .title {
+        @include text-style(v.$f-size-huge, v.$f-weight-bold, v.$color-accent, 0);
+        width: 100%;
+        text-align: center;
+    }
+    .subtitle {
+        @include text-style(v.$f-size-large, v.$f-weight-medium, v.$color-muted, 0);
+    }
+}
+
+.services-cards {
+    @include flex-layout(row, space-between, center, v.$f-gap-sm);
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.services-activity {
+    width: 90%;
+}
+
+.services-activity-card {
+    height: 100%;
+    padding: calculateRem(16px);
+    text-align: center;
+    background: v.$color-dark;
+    border-radius: v.$f-radius-lg;
+    color: v.$color-white;
+    box-shadow: v.$f-shadow-soft;
+    transition: all 0.3s ease;
+
+    fa-icon {
+        @include font-size(v.$f-size-xx-huge);
+        color: v.$color-primary;
+        margin-bottom: v.$f-gap-tiny;
+    }
+    
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: v.$f-shadow-strong;
+        
+        fa-icon {
+            color: v.$color-accent;
+            transform: scale(1.2);
+        }
+    }
+}
+
+.services-activity-title {
+    @include font-size(v.$f-size-x-large);
+    margin-bottom: v.$f-gap-tiny;
+    font-weight: v.$f-weight-bold;
+}
+
+.services-activity-description {
+    @include font-size(v.$f-size-small);
+    color: v.$color-muted;
+}
+
+.services-description {
+    @include text-style(v.$f-size-base, v.$f-weight-regular, v.$color-muted, 0);
+    line-height: v.$f-line-height-relaxed;
+    .description {
+        margin-bottom: 0;
+    }
+}
+
+@include respond(tablet) {
+    .services-activity {
+        width: calculateRem(330px);
+    }
+}
