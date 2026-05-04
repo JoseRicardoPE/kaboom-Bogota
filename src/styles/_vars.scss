@@ -71,6 +71,7 @@ $f-radius-sm: calculateRem(4px);
 $f-radius-md: calculateRem(8px);
 $f-radius-lg: calculateRem(12px);
 $f-radius-xl: calculateRem(16px);
+$f-radius-round: 50%;
 
 $f-shadow-soft: 0 calculateRem(4px) calculateRem(10px) rgba(0, 0, 0, 0.15);
 $f-shadow-inset-soft: inset 0 0 calculateRem(6px) rgba(0, 0, 0, 0.1);

@@ -1,0 +1,14 @@
+@use 'vars' as v;
+@use 'mixins' as *;
+@use 'functions' as *;
+
+.modal-header {
+    display: none;
+}
+
+.modal-img {
+    width: 100%;
+    height: auto;
+    border-radius: v.$f-radius-lg;
+    box-shadow: v.$f-shadow-soft;
+}

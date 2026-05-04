@@ -20,7 +20,7 @@
 }
 
 .services-cards {
-    @include flex-layout(row, space-between, center, v.$f-gap-sm);
+    @include flex-layout(row, center, center, v.$f-gap-sm);
     flex-wrap: wrap;
     width: 100%;
 }
@@ -77,6 +77,6 @@
 
 @include respond(tablet) {
     .services-activity {
-        width: calculateRem(330px);
+        width: calculateRem(380px);
     }
 }
