@@ -6,20 +6,22 @@
     @include flex-layout(column, flex-start, flex-start, v.$f-gap-md);
 }
 .home-content {
-    @include flex-layout(column, flex-start, flex-start, v.$f-gap-sm);
+    @include flex-layout(column, flex-start, center, v.$f-gap-sm);
     width: 100%;
     .title {
         @include text-style(v.$f-size-huge, v.$f-weight-bold, v.$color-accent, 0);
-        width: 100%;
         text-align: center;
     }
     .subtitle {
         @include text-style(v.$f-size-large, v.$f-weight-medium, v.$color-muted, 0);
+        text-align: center;
     }
 }
 .home-description {
     @include text-style(v.$f-size-base, v.$f-weight-regular, v.$color-muted, 0);
+    margin-top: v.$f-gap-md;
     line-height: v.$f-line-height-relaxed;
+    text-align: center;
     .description {
         margin-bottom: 0;
     }
