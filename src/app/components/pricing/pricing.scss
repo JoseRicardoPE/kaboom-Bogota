@@ -1,0 +1,126 @@
+@use 'vars' as v;
+@use 'mixins' as *;
+@use 'functions' as *;
+
+.pricing-container {
+    @include flex-layout(column, flex-start, center, v.$f-gap-md);
+    width: 100%;
+}
+
+/* HEADER */
+
+.pricing-content {
+    @include flex-layout(column, center, center, v.$f-gap-sm);
+    text-align: center;
+
+    .title {
+        @include text-style(v.$f-size-huge, v.$f-weight-bold, v.$color-accent);
+    }
+
+    .subtitle {
+        @include text-style(v.$f-size-large, v.$f-weight-medium, v.$color-muted);
+    }
+}
+
+/* GRID */
+
+.pricing-cards {
+    @include flex-layout(row, center, center, v.$f-gap-md);
+    flex-wrap: wrap;
+}
+
+/* CARD BASE */
+
+.pricing-card-content {
+    position: relative;
+    width: calculateRem(280px);
+    height: calculateRem(380px);
+    border-radius: v.$f-radius-lg;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    box-shadow: v.$f-shadow-soft;
+    cursor: pointer;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: scale(1.03);
+        box-shadow: v.$f-shadow-strong;
+    }
+    &:hover .pricing-img {
+        transform: scale(1.05);
+    }
+}
+
+.pricing-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+    transition: transform 0.4s ease;
+}
+
+/* Overlay */
+
+.pricing-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    padding: calculateRem(16px);
+
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+
+    @include flex-layout(column, center, center, v.$f-gap-sm);
+    text-align: center;
+}
+
+/* HOVER → APARECE */
+
+.pricing-card-content:hover .pricing-overlay {
+    transform: translateY(0);
+}
+
+/* TEXTOS */
+
+.pricing-title {
+    @include font-size(v.$f-size-large);
+    font-weight: v.$f-weight-bold;
+    color: v.$color-white;
+}
+
+.pricing-extra {
+    @include font-size(v.$f-size-small);
+    color: v.$color-muted;
+}
+
+/* BOTÓN */
+
+.btn-primary {
+    margin-top: v.$f-gap-sm;
+    padding: calculateRem(10px) calculateRem(20px);
+    border: none;
+    border-radius: v.$f-radius-md;
+    background: v.$color-primary;
+    color: v.$color-white;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        background: v.$color-accent;
+    }
+}
+
+/* RESPONSIVE */
+
+@include respond(tablet) {
+    .pricing-card-content {
+        width: calculateRem(320px);
+    }
+}
