@@ -71,6 +71,7 @@
 .services-description {
     @include text-style(v.$f-size-base, v.$f-weight-regular, v.$color-muted, 0);
     line-height: v.$f-line-height-relaxed;
+    text-align: center;
     .description {
         margin-bottom: 0;
     }
