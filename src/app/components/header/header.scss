@@ -3,69 +3,79 @@
 @use 'functions' as *;
 
 .kb-navbar {
-  background-color: v.$color-dark;
-  padding: 0.8rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: calculateRem(1px) solid rgba(255,255,255,0.05);
+    z-index: 999;
 
-  .navbar-brand-logo-container {
-    display: flex;
-    align-items: center;
-  }
-
-  .kb-navbar-brand {
-    height: calculateRem(55px);
-    margin-right: 0;
-    padding: 0;
-  }
-
-  .kb-navbar-brand-img {
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .nav-link {
-    color: v.$color-white;
-    font-weight: v.$f-weight-medium;
-    position: relative;
-    transition: 0.3s;
-
-    &:hover {
-      color: v.$color-accent;
+    .navbar-brand-logo-container {
+        display: flex;
+        align-items: center;
     }
 
-    &.active {
-      color: v.$color-primary;
-      font-weight: v.$f-weight-bold;
+    .kb-navbar-brand {
+        height: calculateRem(55px);
+        margin-right: 0;
+        padding: 0;
     }
-  }
 
-  /* 🔥 BOTÓN RESERVA */
-  .kb-btn-reserva {
-    background-color: v.$color-primary;
-    color: v.$color-white;
-    border-radius: v.$f-radius-md;
-    padding: 0.5rem 1rem;
-    font-weight: v.$f-weight-bold;
-    transition: 0.3s;
-
-    &:hover {
-      background-color: darken(v.$color-primary, 10%);
-      color: v.$color-white;
+    .kb-navbar-brand-img {
+        height: 100%;
+        object-fit: cover;
     }
-  }
+
+    .nav-link {
+        color: v.$color-white;
+        font-weight: v.$f-weight-medium;
+        position: relative;
+        transition: 0.3s;
+
+        &:hover {
+            color: v.$color-accent;
+        }
+
+        &.active {
+            color: v.$color-primary;
+            font-weight: v.$f-weight-bold;
+        }
+    }
+
+    /* 🔥 BOTÓN RESERVA */
+    .kb-btn-reserva {
+        background-color: v.$color-primary;
+        color: v.$color-white;
+        border-radius: v.$f-radius-md;
+        padding: 0.5rem 1rem;
+        font-weight: v.$f-weight-bold;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: darken(v.$color-primary, 10%);
+            color: v.$color-white;
+        }
+
+        &:active.btn {
+            border-color: darken(v.$color-primary, 10%);
+        }
+    }
 }
 
 
 .kb-navbar {
 
-  @include respond(tablet) {
-    .kb-navbar-brand {
-      height: calculateRem(70px);
+    @include respond(tablet) {
+        .kb-navbar-brand {
+            height: calculateRem(70px);
+        }
     }
-  }
 
-  @include respond(desktop) {
-    .nav-link {
-      margin: 0 0.5rem;
+    @include respond(desktop) {
+        .nav-link {
+            margin: 0 0.5rem;
+        }
     }
-  }
 }
