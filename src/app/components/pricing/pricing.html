@@ -23,9 +23,15 @@
                     <p class="pricing-extra">
                         {{ service.extra }}
                     </p>
-                    <button class="btn-primary">
-                        Reservar
-                    </button>
+                    @if (service.hasBooking) {
+                        <a 
+                            href="https://wa.me/573166912393"
+                            target="_blank"
+                            class="btn pricing-link"
+                        >
+                            Reservar
+                        </a>
+                    }
                 </div>
             </div>
             }
