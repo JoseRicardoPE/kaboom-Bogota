@@ -85,5 +85,6 @@ $f-shadow-control: inset 0 calculateRem(2px) calculateRem(4px) rgba(0, 0, 0, 0.1
 $breakpoints: (
   mobile: calculateRem(480px),
   tablet: calculateRem(768px),
+  laptop: calculateRem(992px),
   desktop: calculateRem(1024px)
 );
