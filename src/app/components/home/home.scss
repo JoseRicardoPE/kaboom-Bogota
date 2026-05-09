@@ -26,3 +26,98 @@
         margin-bottom: 0;
     }
 }
+
+.home-info {
+    margin-top: 4rem;
+    padding: 2rem;
+    border-radius: 24px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(12px);
+}
+
+/* HEADER */
+
+.home-info-header {
+    text-align: center;
+    margin-bottom: calculateRem(32px);
+}
+.home-info-header-title {
+    color: v.$color-accent;
+    font-size: v.$f-size-huge;
+    margin-bottom: calculateRem(8px);
+}
+
+.home-info-header-description {
+    color: v.$color-muted;
+}
+
+/* GRID */
+
+.home-info-grid {
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+/* CARD */
+
+.home-info-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: calculateRem(24px);
+    border-radius: v.$f-radius-md;
+    transition: 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+}
+
+.home-info-card-title {
+    color: v.$color-muted;
+    margin-bottom: calculateRem(16px);
+}
+
+.home-info-card-body {
+    flex: 1;
+}
+
+.home-info-card-schedule {
+    color: v.$color-muted;
+}
+
+.home-info-card-link {
+    display: inline-block;
+    margin-top: v.$f-gap-sm;
+    background: v.$color-primary;
+    color: v.$color-white;
+    cursor: pointer;
+    font-weight: v.$f-weight-bold;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: darken(v.$color-primary, 10%);
+        color: v.$color-white;
+    }
+    &:active.btn {
+        border-color: darken(v.$color-primary, 10%);
+    }
+}
+
+@include respond(tablet) {
+    .home-info-card:last-child {
+        grid-area: 2/1/3/-1;
+    }
+}
+
+@include respond(laptop) {
+    .home-info-card:last-child {
+        grid-area:initial;
+    }
+}
