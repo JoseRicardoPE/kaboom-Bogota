@@ -1,1 +1,27 @@
-<p>gallery works!</p>
+<section class="gallery-container">
+    <div class="gallery-content">
+        <h1 class="title">Así se vive Kaboom</h1>
+        <h2 class="subtitle">Descubre momentos reales de diversión, celebración y adrenalina junto a nuestros clientes.</h2>
+    </div>
+    <div class="gallery-grid">
+        @for (img of images; track $index) {
+            <div class="gallery-item">
+                <img 
+                    class="gallery-img"
+                    [src]="img.image" 
+                    [alt]="img.alt"
+                >
+            </div>
+        }
+    </div>
+    <button>
+        <a 
+            href="https://www.instagram.com/kaboom.bogota"
+            target="_blank"
+            class="gallery-link"
+        >
+            Ver más en Instagram
+        </a>
+    </button>
+</section>
+
