@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-notfound',
@@ -6,4 +6,13 @@ import { Component } from '@angular/core';
   templateUrl: './notfound.html',
   styleUrl: './notfound.scss',
 })
-export class Notfound {}
+export class Notfound implements OnInit, OnDestroy { 
+
+  ngOnInit(): void {
+    document.body.classList.add('not-found-page');
+  }
+
+  ngOnDestroy(): void {
+    document.body.classList.remove('not-found-page');
+  }
+}

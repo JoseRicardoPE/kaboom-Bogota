@@ -17,6 +17,11 @@ body {
     box-sizing: border-box;
 }
 
+body.not-found-page {
+    background: #000;
+    background-image: none;
+}
+
 .app-layout {
     display: flex;
     flex-direction: column;
@@ -35,3 +40,8 @@ body {
     overflow: hidden;
 }
 
+@include respond(tablet) {
+    body {
+        background-attachment: scroll;
+    }
+}
