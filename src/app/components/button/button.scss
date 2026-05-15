@@ -1,6 +1,7 @@
 @use 'vars' as v;
 @use 'mixins' as *;
 @use 'functions' as *;
+@use 'sass:color';
 
 .button {
     @include font-size(v.$f-size-base);
@@ -19,11 +20,11 @@
         box-shadow .25s ease;
 
     &:hover {
-        background-color: darken(v.$color-primary, 10%);
+        background-color: color.adjust(v.$color-primary, $lightness: -10%);
     }
 
     &:active.button--link {
-        border-color: darken(v.$color-primary, 10%);
+        border-color: color.adjust(v.$color-primary, $lightness: -10%);
     }
 }
 

@@ -10,15 +10,13 @@ import { ModalImgModel } from '../modal/models/modal-img.model';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBullseye, faCircleDot, faFire, faExplosion } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
-import { NgbAccordionItem } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-services',
   imports: [
     CommonModule,
     Herovideo,
-    FontAwesomeModule,
-    NgbAccordionItem
+    FontAwesomeModule
 ],
   templateUrl: './services.html',
   styleUrl: './services.scss',
