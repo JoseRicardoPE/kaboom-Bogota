@@ -1,13 +1,18 @@
 import { Component, inject } from '@angular/core';
-import { HeroVideoModel } from '../../models/hero-video/hero-video.model';
+import { HeroVideoModel } from '../herovideo/models/hero-video.model';
 import { HeroVideoService } from '../../services/hero-video/hero-video.service';
 import { CommonModule } from '@angular/common';
 import { Herovideo } from '../herovideo/herovideo';
+import { Button } from "../button/button";
 
 @Component({
   selector: 'app-pricing',
   standalone: true,
-  imports: [CommonModule, Herovideo],
+  imports: [
+    CommonModule, 
+    Herovideo, 
+    Button
+  ],
   templateUrl: './pricing.html',
   styleUrl: './pricing.scss',
 })

@@ -2,74 +2,28 @@
 @use 'mixins' as *;
 @use 'functions' as *;
 
-.pricing-container {
-    @include flex-layout(column, flex-start, center, v.$f-gap-md);
-    width: 100%;
-}
-
-/* HEADER */
-
-.pricing-content {
-    @include flex-layout(column, center, center, v.$f-gap-sm);
-    text-align: center;
-
-    .title {
-        @include text-style(v.$f-size-huge, v.$f-weight-bold, v.$color-accent);
-    }
-
-    .subtitle {
-        @include text-style(v.$f-size-large, v.$f-weight-medium, v.$color-muted);
-    }
-}
-
-/* GRID */
-
-.pricing-cards {
+.pricing__grid {
     @include flex-layout(row, center, center, v.$f-gap-md);
     flex-wrap: wrap;
 }
 
-/* CARD BASE */
-
-.pricing-card-content {
+.pricing-card {
+    @include neon-card(v.$color-primary, v.$color-primary, true);
     position: relative;
     width: calculateRem(258px);
     height: calculateRem(380px);
     border-radius: v.$f-radius-lg;
     overflow: hidden;
     cursor: pointer;
-    background: rbga(255,255,255,0.03);
     background-size: cover;
     background-position: center;
-    border: calculateRem(2px) solid rgba(255, 46, 99, 0.12);
-    backdrop-filter: blur(8px);
-    box-shadow:
-        0 0 calculateRem(10px) rgba(255, 46, 99, 0.20),
-        0 0 calculateRem(24px) rgba(255, 46, 99, 0.12),
-        inset 0 0 calculateRem(6px) rgba(255, 46, 99, 0.04);
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
 
-    &:hover {
-        transform:
-            translateY(-8px)
-            scale(1.01);
-        border: calculateRem(2px) solid rgba(255, 46, 99, 0.22);
-        box-shadow:
-            0 0 calculateRem(14px) rgba(255, 46, 99, 0.35),
-            0 0 calculateRem(36px) rgba(255, 46, 99, 0.20),
-            0 0 calculateRem(65px) rgba(255, 46, 99, 0.12),
-            inset 0 0 calculateRem(10px) rgba(255,255,255,0.05);
-    }
-
-    &:hover .pricing-img {
+    &:hover .pricing-card__image {
         transform: scale(1.02);
     }
 }
 
-.pricing-img {
+.pricing-card__image {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -77,9 +31,7 @@
     transition: transform 0.4s ease;
 }
 
-/* Overlay */
-
-.pricing-overlay {
+.pricing-card__overlay {
     @include flex-layout(column, center, center, v.$f-gap-sm);
     position: absolute;
     bottom: 0;
@@ -94,41 +46,23 @@
     transition: transform 0.4s ease;
 }
 
-/* HOVER → APARECE */
-
-.pricing-card-content:hover .pricing-overlay {
+.pricing-card:hover .pricing-card__overlay {
     transform: translateY(0);
 }
 
-/* TEXTOS */
-
-.pricing-title {
+.pricing-card__title {
     @include font-size(v.$f-size-large);
     font-weight: v.$f-weight-bold;
     color: v.$color-white;
+    margin-bottom: 0;
 }
 
-.pricing-extra {
+.pricing-card__description {
     @include font-size(v.$f-size-small);
     color: v.$color-muted;
+    margin-bottom: 0;
 }
 
-/* BOTÓN */
-
-.pricing-link {
+.pricing-card__button {
     margin-top: v.$f-gap-sm;
-    background: v.$color-primary;
-    color: v.$color-white;
-    cursor: pointer;
-    font-weight: v.$f-weight-bold;
-    transition: 0.3s;
-
-    &:hover {
-        background-color: darken(v.$color-primary, 10%);
-        color: v.$color-white;
-    }
-
-    &:active.btn {
-        border-color: darken(v.$color-primary, 10%);
-    }
 }
