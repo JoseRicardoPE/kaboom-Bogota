@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HeroVideoModel } from '../../models/hero-video/hero-video.model';
+import { HeroVideoModel } from '../../components/herovideo/models/hero-video.model';
 
 @Injectable({
   providedIn: 'root',

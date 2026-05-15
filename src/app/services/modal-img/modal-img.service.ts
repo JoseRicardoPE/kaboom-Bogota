@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ModalImgModel } from '../../models/modal-img/modal-img.model';
+import { ModalImgModel } from '../../components/modal/models/modal-img.model';
 import { Modal } from '../../components/modal/modal';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
