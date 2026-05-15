@@ -1,9 +1,6 @@
 @use 'functions' as *;
 
-/* =========================================
-   🔹 KABOOM COLOR PALETTE
-========================================= */
-
+/* KABOOM COLOR PALETTE */
 $color-primary: #ff2025;
 $color-secondary: #1ea7e1;
 $color-accent: #ffd900;
@@ -12,7 +9,7 @@ $color-text-dark: #1e1e1e;
 $color-muted: #daebef;
 $color-white: #ffffff;
 
-/* 🔥 MAPA PARA BOOTSTRAP */
+/* MAPA PARA BOOTSTRAP */
 $colors: (
   primary: $color-primary,
   secondary: $color-secondary,
@@ -21,10 +18,7 @@ $colors: (
   light: $color-white
 );
 
-/* =========================================
-   🔹 TIPOGRAFÍA
-========================================= */
-
+/* TIPOGRAFÍA */
 $font-family-main: "Open Sans", sans-serif;
 
 /* Font Sizes */
@@ -54,18 +48,16 @@ $f-weight-xx-bold: 900;
 $f-line-height-normal: 1.3;
 $f-line-height-relaxed: 1.5;
 
-/* 🔹 SPACING (GAPS) */
-
+/* SPACING (GAPS) */
 $f-gap-x-tiny: calculateRem(4px);
 $f-gap-tiny: calculateRem(8px);
 $f-gap-small: calculateRem(12px);
 $f-gap-sm: calculateRem(16px);
+$f-gap-sm-md: calculateRem(24px);
 $f-gap-md: calculateRem(32px);
 $f-gap-lg: calculateRem(48px);
 
-/* =========================================
-   🔹 RADIOS Y SOMBRAS
-========================================= */
+/* RADIOS Y SOMBRAS */
 
 $f-radius-sm: calculateRem(4px);
 $f-radius-md: calculateRem(8px);
@@ -78,9 +70,7 @@ $f-shadow-inset-soft: inset 0 0 calculateRem(6px) rgba(0, 0, 0, 0.1);
 $f-shadow-strong: 0 calculateRem(6px) calculateRem(20px) rgba(0, 0, 0, 0.25);
 $f-shadow-control: inset 0 calculateRem(2px) calculateRem(4px) rgba(0, 0, 0, 0.15);
 
-/* =========================================
-   🔹 BREAKPOINTS
-========================================= */
+/* BREAKPOINTS */
 
 $breakpoints: (
   mobile: calculateRem(480px),
