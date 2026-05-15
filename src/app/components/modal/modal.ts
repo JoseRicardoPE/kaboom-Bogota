@@ -1,11 +1,13 @@
 import { Component, Input } from '@angular/core';
-import { ModalImgModel } from '../../models/modal-img/modal-img.model';
+import { ModalImgModel } from './models/modal-img.model';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Button } from "../button/button";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-modal',
   standalone: true,
-  imports: [],
+  imports: [Button, CommonModule],
   templateUrl: './modal.html',
   styleUrl: './modal.scss',
 })

@@ -1,11 +1,20 @@
-<div class="modal-header">
-    <h5 class="modal-title">{{ data.title }}</h5>
-</div>
-<div class="modal-body">
-    <img 
-        [src]="data.image" 
-        [alt]="data.title" 
-        class="modal-img" 
-    />
-    <a class="btn modal-link" href="https://wa.me/573166912393" target="_blank" aria-label="WhatsApp">Reservar</a>
+<div class="image-modal">
+    <div class="image-modal__header">
+        <h5 class="image-modal__title">{{ data.title }}</h5>
+    </div>
+    <div class="image-modal__body">
+        <img 
+            class="image-modal__image" 
+            [src]="data.image" 
+            [alt]="data.title" 
+        />
+        <app-button 
+            class="image-modal__link" 
+            variant="btn-modal" 
+            href="https://wa.me/573166912393"
+            target="_blank"
+            ariaLabel="WhatsApp"
+            text="Reservar">
+        </app-button>
+    </div>
 </div>

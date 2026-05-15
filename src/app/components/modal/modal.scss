@@ -2,45 +2,29 @@
 @use 'mixins' as *;
 @use 'functions' as *;
 
-.modal-header {
+.modal-container .modal-dialog {
+    padding: 0 calculateRem(16px);
+}
+
+.image-modal__header {
     display: none;
 }
 
-.modal-body {
+.image-modal__body {
     position: relative;
     padding: 0;
 }
 
-.modal-img {
+.image-modal__image {
     width: 100%;
     height: auto;
     border-radius: v.$f-radius-lg;
     box-shadow: v.$f-shadow-soft;
 }
 
-.modal-link {
+.image-modal__link {
     position: absolute;
     top: 0;
     right: 0;
     left: auto;
-    padding: calculateRem(4px) calculateRem(20px);
-    color: v.$color-muted;
-    text-decoration: none;
-    background-color: v.$color-primary;
-    font-weight: v.$f-weight-bold;
-    font-size: v.$f-size-small;
-    border-radius: calculateRem(2px) calculateRem(16px) calculateRem(2px) calculateRem(16px);
-    &:hover {
-        background-color: darken(v.$color-primary, 10%);
-        color: v.$color-muted;
-    }
-    &:active.btn {
-        border-color: darken(v.$color-primary, 10%);
-    }
-}
-
-@include respond(tablet) {
-    .modal-pricing {
-        font-size: v.$f-size-base;
-    }
 }
