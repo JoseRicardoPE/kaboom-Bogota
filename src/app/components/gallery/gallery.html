@@ -1,27 +1,26 @@
-<section class="gallery-container">
-    <div class="gallery-content">
+<section class="section-container gallery">
+    <div class="section-header gallery__header">
         <h1 class="title">Así se vive Kaboom</h1>
         <h2 class="subtitle">Descubre momentos reales de diversión, celebración y adrenalina junto a nuestros clientes.</h2>
     </div>
-    <div class="gallery-grid">
+    <div class="gallery__grid">
         @for (img of images; track $index) {
-            <div class="gallery-item">
+            <div class="gallery__item">
                 <img 
-                    class="gallery-img"
+                    class="gallery__image"
                     [src]="img.image" 
                     [alt]="img.alt"
                 >
             </div>
         }
     </div>
-    <button>
-        <a 
-            href="https://www.instagram.com/kaboom.bogota"
-            target="_blank"
-            class="gallery-link"
-        >
-            Ver más en Instagram
-        </a>
-    </button>
+    <app-button
+        class="gallery__link"
+        variant="link"
+        text="Ver más en Instagram"
+        href="https://www.instagram.com/kaboom.bogota"
+        target="_blank"
+        ariaLabel="Instagram"
+    ></app-button>
 </section>
 
