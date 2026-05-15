@@ -34,6 +34,12 @@
   margin-bottom: $margin-bottom;
 }
 
+//? Mixin para filtros de fondo borroso con soporte WebKit
+@mixin backdrop-blur($radius) {
+  -webkit-backdrop-filter: blur($radius);
+  backdrop-filter: blur($radius);
+}
+
 //? Mixin para títulos (title) y subtítulos (subtitle)
 @mixin section-titles {
   .title {
@@ -43,6 +49,7 @@
       v.$color-accent,
       0
     );
+    line-height: v.$f-line-height-normal;
   }
 
   .subtitle {
@@ -52,6 +59,7 @@
       v.$color-muted,
       0
     );
+    line-height: v.$f-line-height-normal;
   }
 }
 
@@ -62,7 +70,7 @@
   $hasBorder: true
 ) {
   background: rgba(v.$color-dark, 0.03);
-  backdrop-filter: blur(8px);
+  @include backdrop-blur(8px);
   @if $hasBorder {
     border: calculateRem(2px) solid rgba($borderColor, 0.12);
   } else {

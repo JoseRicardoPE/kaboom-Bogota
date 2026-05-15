@@ -13,21 +13,24 @@
 }
 
 .home-info {
+    @include backdrop-blur(12px);
     margin-top: calculateRem(64px);
     padding: calculateRem(32px);
     border-radius: calculateRem(24px);
     background: rgba(0,0,0,0.45);
-    backdrop-filter: blur(12px);
 }
 
 .home-info__header {
     text-align: center;
     margin-bottom: calculateRem(32px);
+    line-height: v.$f-line-height-relaxed;
 }
 .home-info__title {
     @include font-size(v.$f-size-huge);
+    font-weight: v.$f-weight-bold;
     color: v.$color-accent;
     margin-bottom: calculateRem(32px);
+    line-height: v.$f-line-height-normal;
 }
 
 .home-info__description {
@@ -59,17 +62,36 @@
 
 }
 
-.home-card__title {
+.home-card__header {
+    @include flex-layout(row, start, baseline, v.$f-gap-tiny);
+    @include font-size(v.$f-size-large);
     color: v.$color-white;
     margin-bottom: calculateRem(16px);
 }
 
+.home-card__icon {
+    color: v.$color-highlight;
+    text-shadow: 
+        0 0 calculateRem(6px) rgba(82, 214, 255, 0.35);
+}
+
+.home-card__title {
+    @include font-size(v.$f-size-x-large);
+    font-weight: v.$f-weight-bold;
+    line-height: v.$f-line-height-normal;
+    margin: 0;
+}
+
 .home-card__body {
     flex: 1;
+    line-height: v.$f-line-height-normal;
 }
 
 .home-card__text {
     color: v.$color-muted;
+    & strong {
+        margin-left: calculateRem(6px);
+    }
 }
 
 .home-card__button {

@@ -8,6 +8,7 @@
 }
 
 .hero__media {
+    @include backdrop-blur(8px);
     position: relative;
     align-self: center;
     width: 100%;
@@ -16,7 +17,6 @@
     border-radius: v.$f-radius-xl;
     border: calculateRem(1.5px) solid rgba(255,255,255,0.10);
     background: rgba(255,255,255,0.02);
-    backdrop-filter: blur(8px);
     box-shadow:
         0 0 calculateRem(8px) rgba(255,255,255,0.08),
         0 0 calculateRem(18px) rgba(255,255,255,0.05),
