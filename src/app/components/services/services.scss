@@ -2,99 +2,72 @@
 @use 'mixins' as *;
 @use 'functions' as *;
 
-.services-container {
-    @include flex-layout(column, flex-start, flex-start, v.$f-gap-md);
-}
-
-.services-content {
-    @include flex-layout(column, flex-start, center, v.$f-gap-sm);
-    width: 100%;
-    .title {
-        @include text-style(v.$f-size-huge, v.$f-weight-bold, v.$color-accent, 0);
-        text-align: center;
-    }
-    .subtitle {
-        @include text-style(v.$f-size-large, v.$f-weight-medium, v.$color-muted, 0);
-        text-align: center;
-    }
-}
-
-.services-cards {
+.services__grid {
     @include flex-layout(row, center, center, v.$f-gap-md);
     flex-wrap: wrap;
     width: 100%;
 }
 
-.services-activity {
-    width: 90%;
+.services__card-wrapper {
+    width: 100%;
     cursor: pointer;
 }
 
-.services-activity-card {
+.services__card {
+    @include neon-card(v.$color-primary, v.$color-primary, true);
     height: 100%;
-    padding: calculateRem(16px);
+    padding: calculateRem(32px);
     text-align: center;
     background: v.$color-dark;
     border-radius: v.$f-radius-lg;
     color: v.$color-white;
-    border: calculateRem(2px) solid rgba(255, 32, 37, 0.12);
-    backdrop-filter: blur(8px);
-    box-shadow:
-        0 0 calculateRem(8px) rgba(255, 32, 37, 0.28),
-        0 0 calculateRem(18px) rgba(255, 32, 37, 0.18),
-        0 0 calculateRem(30px) rgba(255, 32, 37, 0.10),
-        inset 0 0 calculateRem(6px) rgba(255,255,255,0.04);
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
+    transition: all 0.3s ease;
 
-    fa-icon {
-        @include font-size(v.$f-size-xx-huge);
-        color: v.$color-primary;
-        margin-bottom: v.$f-gap-tiny;
-    }
-    
     &:hover {
-        transform:
-            translateY(-8px)
-            scale(1.01);
-        border: calculateRem(2px) solid rgba(255, 217, 0, 0.12);
-        box-shadow:
-            0 0 calculateRem(10px) rgba(255, 217, 0, 0.35),
-            0 0 calculateRem(22px) rgba(255, 217, 0, 0.20),
-            0 0 calculateRem(38px) rgba(255, 217, 0, 0.12),
-            inset 0 0 calculateRem(8px) rgba(255,255,255,0.05);
-        
-        fa-icon {
+        @include neon-card(v.$color-accent, v.$color-accent);
+        background: v.$color-dark;
+    
+        .services__card-icon {
             color: v.$color-accent;
             transform: scale(1.2);
         }
     }
 }
 
-.services-activity-title {
+.services__card-icon {
+    @include font-size(v.$f-size-xx-huge);
+    color: v.$color-primary;
+    margin-bottom: v.$f-gap-tiny;
+    transition: all 0.3s ease;
+}
+
+
+.services__card-title {
     @include font-size(v.$f-size-x-large);
     margin-bottom: v.$f-gap-tiny;
     font-weight: v.$f-weight-bold;
 }
 
-.services-activity-description {
+.services__card-description {
     @include font-size(v.$f-size-small);
     color: v.$color-muted;
+    margin-bottom: 0
 }
 
-.services-description {
+.services__description {
     @include text-style(v.$f-size-base, v.$f-weight-regular, v.$color-muted, 0);
     line-height: v.$f-line-height-relaxed;
     text-align: center;
-    .description {
-        margin-bottom: 0;
-    }
 }
 
-@include respond(tablet) {
-    .services-activity {
+.services__description-text {
+    margin-bottom: 0;
+}
+
+/* RESPONSIVE */
+
+@include respond(mobile) {
+    .services__card-wrapper {
         width: calculateRem(380px);
     }
 }

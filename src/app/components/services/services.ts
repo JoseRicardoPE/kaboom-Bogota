@@ -1,12 +1,11 @@
 import { Component, inject } from '@angular/core';
 
-import { HeroVideoModel } from '../../models/hero-video/hero-video.model';
+import { HeroVideoModel } from '../herovideo/models/hero-video.model';
 import { HeroVideoService } from '../../services/hero-video/hero-video.service';
 import { Herovideo } from '../herovideo/herovideo';
 
 import { ModalImgService } from '../../services/modal-img/modal-img.service';
-import { ModalImgModel } from '../../models/modal-img/modal-img.model';
-import { Modal } from '../modal/modal';
+import { ModalImgModel } from '../modal/models/modal-img.model';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBullseye, faCircleDot, faFire, faExplosion } from '@fortawesome/free-solid-svg-icons';

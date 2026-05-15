@@ -1,26 +1,26 @@
 <app-herovideo [media]="heroVideoMedia">
-    <section class="services-container">
-        <div class="services-content">
+    <section class="section-container services">
+        <div class="section-header services__header">
             <h1 class="title">Nuestros servicios</h1>
             <h2 class="subtitle">
                 Descubre todo lo que tenemos para ofrecerte una experiencia inolvidable.
             </h2>
         </div>
     
-        <div class="services-cards">
+        <div class="services__grid">
             @for (service of services; track service.image) {
-                <div class="services-activity">
-                    <div class="services-activity-card" (click)="openModal(service)">
-                        <fa-icon [icon]="service.icon"></fa-icon>
-                        <h3 class="services-activity-title">{{ service.title }}</h3>
-                        <p class="services-activity-description">{{ service.description }}</p>
+                <article class="services__card-wrapper">
+                    <div class="services__card" (click)="openModal(service)">
+                        <fa-icon class="services__card-icon" [icon]="service.icon"></fa-icon>
+                        <h3 class="services__card-title">{{ service.title }}</h3>
+                        <p class="services__card-description">{{ service.description }}</p>
                     </div>
-                </div>
+                </article>
             }
         </div>
     
-        <div class="services-description">
-            <p class="description">
+        <div class="services__description">
+            <p class="services__description-text">
                 Vive momentos llenos de adrenalina, risas y competencia en un solo lugar. Kaboom es el sitio
                 perfecto para celebrar cumpleaños, reunirte con amigos o realizar eventos empresariales.
                 Contamos con horarios flexibles y espacios diseñados para recibir hasta 80 personas en eventos
