@@ -34,6 +34,60 @@
   margin-bottom: $margin-bottom;
 }
 
+//? Mixin para títulos (title) y subtítulos (subtitle)
+@mixin section-titles {
+  .title {
+    @include text-style(
+      v.$f-size-huge,
+      v.$f-weight-bold,
+      v.$color-accent,
+      0
+    );
+  }
+
+  .subtitle {
+    @include text-style(
+      v.$f-size-large,
+      v.$f-weight-medium,
+      v.$color-muted,
+      0
+    );
+  }
+}
+
+//? Mixin para las neon-cards
+@mixin neon-card(
+  $borderColor,
+  $glowColor, 
+  $hasBorder: true
+) {
+  background: rgba(v.$color-dark, 0.03);
+  backdrop-filter: blur(8px);
+  @if $hasBorder {
+    border: calculateRem(2px) solid rgba($borderColor, 0.12);
+  } else {
+    border: none;
+  }
+  box-shadow: 
+    0 0 calculateRem(8px) rgba($glowColor, 0.28),
+    0 0 calculateRem(18px) rgba($glowColor, 0.18),
+    0 0 calculateRem(30px) rgba($glowColor, 0.10);
+  transition: 
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+  &:hover {
+    transform: scale(1.03);
+    @if $hasBorder {
+      border-color: rgba($borderColor, 0.22);
+    }
+    box-shadow: 
+      0 0 calculateRem(10px) rgba($glowColor, 0.35),
+      0 0 calculateRem(22px) rgba($glowColor, 0.20),
+      0 0 calculateRem(38px) rgba($glowColor, 0.12);
+  }
+}
+
 //? Mixin para los break point (media queries)
 @mixin respond($breakpoint) {
   @if map.has-key(v.$breakpoints, $breakpoint) {
@@ -44,4 +98,3 @@
     @warn "Breakpoint '#{$breakpoint}' no existe.";
   }
 }
-
