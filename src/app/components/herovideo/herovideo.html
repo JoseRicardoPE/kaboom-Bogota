@@ -1,11 +1,12 @@
 @if (media) {
-    <section class="hero-video">
-        <div class="hero-content">
+    <section class="section-container hero">
+        <div class="hero__content">
             <ng-content></ng-content>
         </div>
 
-        <div class="hero-media">
-            <video 
+        <div class="hero__media">
+            <video
+                class="hero__video"
                 autoplay 
                 muted 
                 loop 
