@@ -8,6 +8,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    gap: calculateRem(8px);
     padding: calculateRem(8px) calculateRem(16px);
     border-radius: v.$f-radius-md;
     background: v.$color-primary;
@@ -25,6 +26,11 @@
 
     &:active.button--link {
         border-color: color.adjust(v.$color-primary, $lightness: -10%);
+    }
+
+    .button__icon {
+        display: inline-flex;
+        align-items: center;
     }
 }
 
