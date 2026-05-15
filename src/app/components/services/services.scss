@@ -46,6 +46,7 @@
     @include font-size(v.$f-size-x-large);
     margin-bottom: v.$f-gap-tiny;
     font-weight: v.$f-weight-bold;
+    line-height: v.$f-line-height-relaxed;
 }
 
 .services__card-description {
