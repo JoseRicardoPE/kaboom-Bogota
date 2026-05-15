@@ -15,7 +15,10 @@
         
         <!-- HORARIOS -->
         <div class="home-card home-info-card--schedules">
-            <h3 class="home-card__title">🕒 Horarios</h3>
+            <div class="home-card__header">
+                <fa-icon class="home-card__icon" [icon]="faClock"></fa-icon>
+                <h3 class="home-card__title">Horarios</h3>
+            </div>
             <div class="home-card__body">
                 <p class="home-card__text">Miércoles, Jueves y Domingos<strong>2pm a 9pm</strong></p>
                 <p class="home-card__text">Viernes y Sábados<strong>2pm a 11pm</strong></p>
@@ -23,35 +26,44 @@
             <app-button
                 class="home-card__button"
                 href="https://wa.me/573166912393"
-                text="Abrimos festivos 🎉"
+                [icon]="faCalendarDays"
+                text="Abrimos festivos"
                 target="_blank">
             </app-button>
         </div>
         
         <!-- ENCUESTA -->
         <div class="home-card home-info-card--survey">
-            <h3 class="home-card__title">⭐ Tu opinión importa</h3>
+            <div class="home-card__header">
+                <fa-icon class="home-card__icon" [icon]="faStar"></fa-icon>
+                <h3 class="home-card__title">Tu opinión importa</h3>
+            </div>
             <div class="home-card__body">
                 <p class="home-card__text">Ayúdanos a mjorar tu experiencia en Kaboom.</p>
             </div>
             <app-button
                 class="home-card__button"
                 href="https://j9hobe1g.forms.app/mi-nuevo-formulario"
-                text="Responder encuesta 📝"
+                [icon]="faClipboardQuestion"
+                text="Responder encuesta"
                 target="_blank">
             </app-button>
         </div>
 
         <!-- RESERVA -->
         <div class="home-card home-info-card--booking">
-            <h3 class="home-card__title">🔥 Reserva ahora</h3>
+            <div class="home-card__header">
+                <fa-icon class="home-card__icon" [icon]="faCalendarCheck"></fa-icon>
+                <h3 class="home-card__title">Reserva ahora</h3>
+            </div>
             <div class="home-card__body">
-                <p class="home-card__text">Celebra cumpleaños, eventos y noches inolvidables.</p>
+                <p class="home-card__text">Celebra <strong>eventos empresariales</strong>, celebra tus <strong>fechas especiales</strong> y momentos inolvidables.</p>
             </div>
             <app-button
                 class="home-card__button"
                 href="https://wa.me/573166912393"
-                text="Reservar por WhatsApp 📲"
+                [icon]="faWhatsapp"
+                text="Reservar por WhatsApp"
                 target="_blank">
             </app-button>
         </div>
