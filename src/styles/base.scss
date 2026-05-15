@@ -3,8 +3,7 @@
 @use 'mixins' as *;
 
 body {
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     padding-top: calculateRem(90px);
     background-image: url('/images/backgrounds/backgroundKaboom.webp');
     background-size: cover;
@@ -12,14 +11,19 @@ body {
     background-attachment: fixed;
     font-family: v.$font-family-main;
     overscroll-behavior: none;
-    touch-action: none;
     line-height: v.$f-line-height-normal;
-    box-sizing: border-box;
 }
 
 body.not-found-page {
     background: #000;
     background-image: none;
+}
+
+.layout-wrapper {
+    width: 100%;
+    max-width: calculateRem(1400px);
+    margin-inline: auto;
+    padding-inline: calculateRem(16px);
 }
 
 .app-layout {
@@ -33,15 +37,40 @@ body.not-found-page {
     padding: calculateRem(32px) 0;
 }
 
-.modal-container .modal-content {
-    background: transparent;
-    border-radius: v.$f-radius-xl;
-    border: none;
-    overflow: hidden;
+.modal-container {
+    
+    .modal-dialog {
+        padding: 0 calculateRem(16px);
+        margin: 0 auto;
+    }
+
+    .modal-content {
+        background: transparent;
+        border-radius: v.$f-radius-xl;
+        border: none;
+        overflow: hidden;
+    }
+} 
+
+.section-container {
+    @include flex-layout(column, flex-start, center, v.$f-gap-md);
 }
 
+.section-header {
+    @include flex-layout(column, center, center, v.$f-gap-sm);
+    @include section-titles;
+    text-align: center;
+}
+
+/* RESPONSIVE */
 @include respond(tablet) {
-    body {
-        background-attachment: scroll;
+    .layout-wrapper {
+        padding-inline: calculateRem(24px);
+    }
+}
+
+@include respond(laptop) {
+    .layout-wrapper {
+        padding-inline: calculateRem(32px);
     }
 }
