@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Button } from "../button/button";
 
 @Component({
   selector: 'app-notfound',
-  imports: [],
+  imports: [Button],
   templateUrl: './notfound.html',
   styleUrl: './notfound.scss',
 })

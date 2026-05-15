@@ -1,14 +1,19 @@
-<section class="notfound-container">
-    <div class="notfound-content">
-        <h1 class="notfound-title">404</h1>
-        <h2 class="notfound-subtitle">Página no encontrada</h2>
-        <div class="notfound-image-content">
-            <img class="notfound-img" src="images/notFound/notfound.webp" alt="">
+<section class="section-container notfound">
+    <div class="section-header notfound__content">
+        <h1 class="notfound__code">404</h1>
+        <h2 class="notfound__subtitle">Página no encontrada</h2>
+        <div class="notfound__image-wrapper">
+            <img class="notfound__img" src="images/notFound/notfound.webp" alt="">
         </div>
-        <div class="notfound-info">
-            <p><strong>Esta zona explotó</strong></p>
-            <p>Parece que tomaste una ruta equivocada, pero aún puedes volver a la diversión.</p>
+        <div class="notfound__info">
+            <p class="notfound__info-title"><strong>Esta zona explotó</strong></p>
+            <p class="notfound__info-description">Parece que tomaste una ruta equivocada, pero aún puedes volver a la diversión.</p>
         </div>
-        <a class="btn notfound-link" href="/home">Volver al inicio</a>
+        <app-button
+            class="notfound__button"
+            text="Volver al inicio"
+            href="/home"
+            variant="primary"
+        ></app-button>
     </div>
 </section>
