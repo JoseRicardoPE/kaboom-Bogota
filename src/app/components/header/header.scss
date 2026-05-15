@@ -2,7 +2,7 @@
 @use 'mixins' as *;
 @use 'functions' as *;
 
-.kb-navbar {
+.navbar-custom {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,27 +12,62 @@
     border-bottom: calculateRem(1px) solid rgba(255,255,255,0.05);
     z-index: 999;
 
-    .navbar-brand-logo-container {
-        display: flex;
-        align-items: center;
+    .layout-wrapper {
+        @include flex-layout(row, space-between, center);
+        flex-wrap: wrap;
+        min-height: 100%;
     }
 
-    .kb-navbar-brand {
+    .navbar-top {
+        @include flex-layout(row, space-between, center);
+        width: 100%;
+    }
+
+    .navbar-brand-logo-container {
+        @include flex-layout(row, center, center);
+        z-index: 10;
+    }
+
+    .navbar-custom-brand {
+        display: flex;
+        align-items: center;
         height: calculateRem(55px);
         margin-right: 0;
         padding: 0;
     }
 
-    .kb-navbar-brand-img {
+    .navbar-custom-brand-img {
         height: 100%;
+        width: auto;
         object-fit: cover;
+    }
+
+    .navbar-toggler {
+        padding: calculateRem(6px) calculateRem(10px);
+        border: calculateRem(2px) solid rgba(255,255,255,0.35);
+        border-radius: v.$f-radius-md;
+        box-shadow: none;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .navbar-collapse {
+        width: 100%;
+    }
+
+    .navbar-nav {
+        @include flex-layout(column, center, center, v.$f-gap-sm);
+        width: 100%;
+        padding: calculateRem(20px) 0 calculateRem(12px);
     }
 
     .nav-link {
         color: v.$color-white;
         font-weight: v.$f-weight-medium;
         position: relative;
-        transition: 0.3s;
+        transition: color 0.3s ease;
 
         &:hover {
             color: v.$color-accent;
@@ -43,39 +78,30 @@
             font-weight: v.$f-weight-bold;
         }
     }
-
-    /* 🔥 BOTÓN RESERVA */
-    .kb-btn-reserva {
-        background-color: v.$color-primary;
-        color: v.$color-white;
-        border-radius: v.$f-radius-md;
-        padding: 0.5rem 1rem;
-        font-weight: v.$f-weight-bold;
-        transition: 0.3s;
-
-        &:hover {
-            background-color: darken(v.$color-primary, 10%);
-            color: v.$color-white;
-        }
-
-        &:active.btn {
-            border-color: darken(v.$color-primary, 10%);
-        }
-    }
 }
 
+/* RESPONSIVE */
 
-.kb-navbar {
-
-    @include respond(tablet) {
-        .kb-navbar-brand {
+@include respond(tablet) {
+    .navbar-custom {
+        .layout-wrapper {
+            flex-wrap: nowrap;
+        }
+        .navbar-custom-brand {
             height: calculateRem(70px);
         }
-    }
-
-    @include respond(desktop) {
-        .nav-link {
-            margin: 0 0.5rem;
+        .navbar-toggler {
+            display: none;
+        }
+        .navbar-collapse {
+            display: flex;
+            justify-content: flex-end;
+            width: auto;
+        }
+        .navbar-nav {
+            @include flex-layout(row, center, flex-end, v.$f-gap-lg);
+            width: auto;
+            padding: 0;
         }
     }
 }

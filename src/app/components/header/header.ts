@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterLink, RouterLinkActive } from "@angular/router";
+import { Button } from "../button/button";
 
 @Component({
   selector: 'app-header',
   imports: [
     NgbCollapseModule,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    Button
 ],
   templateUrl: './header.html',
   styleUrl: './header.scss',

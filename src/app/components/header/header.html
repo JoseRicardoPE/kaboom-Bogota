@@ -1,24 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark kb-navbar">
-    <div class="container">
-        <!-- LOGO -->
-        <div class="navbar-brand-logo-container">
-            <a class="navbar-brand kb-navbar-brand" routerLink="/pricing">
-                <img class="kb-navbar-brand-img" src="logos/logoK.svg" alt="Kaboom" />
-            </a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom">
+    <div class="layout-wrapper">
+        <div class="navbar-top">
+            
+            <!-- LOGO -->
+            <div class="navbar-brand-logo-container">
+                <a class="navbar-brand navbar-custom-brand" routerLink="/pricing">
+                    <img class="navbar-custom-brand-img" src="logos/logoK.svg" alt="Kaboom" />
+                </a>
+            </div>
+    
+            <!-- BOTÓN MOBILE -->
+            <button
+                class="navbar-toggler"
+                type="button"
+                (click)="toggleMenu()"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
-
-        <!-- BOTÓN MOBILE -->
-        <button
-            class="navbar-toggler"
-            type="button"
-            (click)="toggleMenu()"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
         <!-- MENÚ -->
         <div 
-            class="collapse navbar-collapse justify-content-end" 
+            class="navbar-collapse collapse" 
             id="navbarKaboom"
             [ngbCollapse]="isMenuCollapsed">
             <div class="navbar-nav">
@@ -28,7 +31,13 @@
                 <a class="nav-link" routerLinkActive="active" routerLink="/gallery">Galería</a>
 
                 <!-- BOTÓN DESTACADO -->
-                <a class="btn kb-btn-reserva ms-lg-3" href="https://wa.me/573166912393" target="_blank" aria-label="WhatsApp"> Reservar </a>
+                 <app-button
+                    text="Reservar"
+                    href="https://wa.me/573166912393"
+                    target="_blank"
+                    ariaLabel="WhatsApp"
+                 >
+                 </app-button>
             </div>
         </div>
     </div>
