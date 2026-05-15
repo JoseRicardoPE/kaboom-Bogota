@@ -1,1 +1,12 @@
-<p>button works!</p>
+@if (href) {
+    <a
+        class="button"
+        [class.button--modal]="variant === 'btn-modal'"
+        [class.button--link]="variant === 'link'"
+        [href]="disabled ? null : href"
+        [target]="target"
+        [attr.aria-label]="ariaLabel"
+    >
+        {{ text }}
+    </a>
+}

@@ -1,0 +1,59 @@
+@use 'vars' as v;
+@use 'mixins' as *;
+@use 'functions' as *;
+
+.button {
+    @include font-size(v.$f-size-base);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: calculateRem(8px) calculateRem(16px);
+    border-radius: v.$f-radius-md;
+    background: v.$color-primary;
+    color: v.$color-white;
+    font-weight: v.$f-weight-bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background-color .25s ease,
+        box-shadow .25s ease;
+
+    &:hover {
+        background-color: darken(v.$color-primary, 10%);
+    }
+
+    &:active.button--link {
+        border-color: darken(v.$color-primary, 10%);
+    }
+}
+
+/* MODIFIERS */
+
+.button--modal {
+    @include font-size(v.$f-size-small);
+    padding: calculateRem(4px) calculateRem(20px);
+    border-radius: calculateRem(2px) calculateRem(16px) calculateRem(2px) calculateRem(16px);
+}
+
+.button--link {
+    padding: 0;
+    min-height: auto;
+    background: transparent;
+    color: v.$color-accent;
+    font-weight: v.$f-weight-bold;
+    text-decoration: none;
+    transition: 
+        background 0.2s ease,
+        transform 0.2s ease;
+    &:hover {
+        background: transparent;
+        transform: scale(1.1);
+    }
+}
+
+/* RESPONSIVE */
+@include respond(tablet) {
+    .button--modal {
+        @include font-size(v.$f-size-base);
+    }
+}
