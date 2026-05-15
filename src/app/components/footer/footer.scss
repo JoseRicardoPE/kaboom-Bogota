@@ -41,14 +41,15 @@
     @include flex-layout(column, flex-start, center, v.$f-gap-sm-md);
 }
 
-.footer__nav-title {
+.footer__nav-title,
+.footer__contact-title {
     @include font-size(v.$f-size-large);
+    width: 100%;
     margin: 0;
     color: v.$color-accent;
     font-weight: v.$f-weight-bold;
-    width: 100%;
+    line-height: v.$f-line-height-relaxed;
 }
-
 
 .footer__nav-list {
     @include flex-layout(column, flex-start, flex-start, v.$f-gap-sm );
@@ -133,6 +134,10 @@
     &:hover {
         transform: scale(1.2);
     }
+}
+
+.footer__social-icon {
+    color: v.$color-muted;
 }
 
 /* COPYRIGHT */
