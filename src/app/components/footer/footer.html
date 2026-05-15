@@ -1,66 +1,78 @@
-<footer class="container-footer">
-    <div class="footer-content">
-        <div class="row footer-info">
-            <!-- 🧨 LOGO + DESCRIPCIÓN -->
-            <div class="col-md-4 footer-brand">
-                <a routerLink="/pricing">
-                    <img src="logos/logoK.svg" alt="Kaboom" class="footer-logo" />
-                </a>
-                <p>Diversión, adrenalina y buenas vibras. Solo en Kaboom 💥</p>
-            </div>
+<footer class="footer-container">
+    <div class="layout-wrapper">
+        <div class="footer-content">
+            <div class="footer-info">
+                <!-- LOGO + DESCRIPCIÓN -->
+                <div class="footer-brand">
+                    <a class="footer-brand-link" routerLink="/pricing">
+                        <img src="logos/logoK.svg" alt="Kaboom" class="footer-logo" />
+                    </a>
+                    <p class="footer-brand-description">Diversión, adrenalina y buenas vibras. Solo en Kaboom 💥</p>
 
-            <!-- 🎯 LINKS -->
-            <div class="col-md-4 footer-links">
-                <h5>Enlaces</h5>
-                <ul>
-                    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}">
-                        <a routerLink="/home">Inicio</a>
-                    </li>
-                    <li routerLinkActive="active" >
-                        <a routerLink="/services">Servicios</a>
-                    </li>
-                    <li routerLinkActive="active" >
-                        <a routerLink="/pricing">Precios</a>
-                    </li>
-                    <li routerLinkActive="active" >
-                        <a href="https://wa.me/573166912393" target="_blank" aria-label="WhatsApp">Reservas</a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- 📱 CONTACTO -->
-            <div class="col-md-4 footer-contact">
-                <h5>Contacto</h5>
-                <div class="footer-contact-info">
-                    <p>
-                        <fa-icon [icon]="faLocation"></fa-icon> Bogotá, Colombia
-                    </p>
-                    <p>
-                        <fa-icon [icon]="faMobile"></fa-icon>+57 316 6912393
-                    </p>
-                    <p>
-                        <fa-icon [icon]="faEnvelope"></fa-icon> kaboom.funy@gmail.com
-                    </p>
+                    <!-- Redes Sociales -->
+                    <div class="footer-social">
+                        <a class="footer-social-link" href="https://www.tiktok.com/@kaboom.funny" target="_blank" aria-label="TikTok">
+                            <fa-icon [icon]="faTiktok"></fa-icon>
+                        </a>
+                        <a class="footer-social-link" href="https://www.instagram.com/kaboom.bogota" target="_blank" aria-label="Instagram">
+                            <fa-icon [icon]="faInstagram"></fa-icon>
+                        </a>
+                        <a class="footer-social-link" href="https://wa.me/573166912393" target="_blank" aria-label="WhatsApp">
+                            <fa-icon [icon]="faWhatsapp"></fa-icon>
+                        </a>
+                    </div>
                 </div>
-
-                <!-- 🔗 Redes -->
-                <div class="social">
-                    <a href="https://www.tiktok.com/@kaboom.funny" target="_blank" aria-label="TikTok">
-                        <fa-icon [icon]="faTiktok"></fa-icon>
-                    </a>
-                    <a href="https://www.instagram.com/kaboom.bogota" target="_blank" aria-label="Instagram">
-                        <fa-icon [icon]="faInstagram"></fa-icon>
-                    </a>
-                    <a href="https://wa.me/573166912393" target="_blank" aria-label="WhatsApp">
-                        <fa-icon [icon]="faWhatsapp"></fa-icon>
-                    </a>
+    
+                <!-- LINKS -->
+                <div class="footer-links">
+                    <h5 class="footer-title">Enlaces</h5>
+                    <ul class="footer-links-list">
+                        <li class="footer-links-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}">
+                            <a class="footer-links-link" routerLink="/home">Inicio</a>
+                        </li>
+                        <li class="footer-links-item" routerLinkActive="active" >
+                            <a class="footer-links-link" routerLink="/services">Servicios</a>
+                        </li>
+                        <li class="footer-links-item" routerLinkActive="active" >
+                            <a class="footer-links-link" routerLink="/pricing">Precios</a>
+                        </li>
+                        <li class="footer-links-item" routerLinkActive="active" >
+                            <a class="footer-links-link" href="https://wa.me/573166912393" target="_blank" aria-label="WhatsApp">Reservas</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- CONTACTO -->
+                <div class="footer-contact">
+                    <h5 class="footer-title">Contacto</h5>
+                    <div class="footer-contact-info">
+                        <div class="footer-contact-item">
+                            <fa-icon class="footer-contact-icon" [icon]="faLocation"></fa-icon> 
+                            <div class="footer-contact-content">
+                                <span class="footer-contact-text-city">Bogotá, Colombia</span>
+                                <strong class="footer-contact-text-address">Carrera 18 # 18 - 40 sur | Barrio el Restrepo.</strong>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <fa-icon class="footer-contact-icon" [icon]="faMobile"></fa-icon>
+                            <div class="footer-contact-content">
+                                <span class="footer-contact-text-phone">+57 316 6912393</span>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <fa-icon class="footer-contact-icon" [icon]="faEnvelope"></fa-icon>
+                            <div class="footer-contact-content">
+                                <span class="footer-contact-text-email">kaboom.funy@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- ⚖️ COPYRIGHT -->
-        <div class="footer-bottom">
-            <p>© 2026 Kaboom. Todos los derechos reservados.</p>
+    
+            <!-- COPYRIGHT -->
+            <div class="footer-copyright">
+                <p class="footer-copyright-text">© 2026 Kaboom. Todos los derechos reservados.</p>
+            </div>
         </div>
     </div>
 </footer>
