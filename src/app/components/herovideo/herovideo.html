@@ -1,4 +1,4 @@
-@if (media) {
+@if (media()) {
     <section class="section-container hero">
         <div class="hero__content">
             <ng-content></ng-content>
@@ -9,12 +9,13 @@
                 #videoElement
                 class="hero__video"
                 autoplay 
+                muted
                 loop 
                 playsinline 
-                [attr.poster]="media.poster"
-                preload="metadata"
+                [attr.poster]="media().poster"
+                preload="auto"
             >
-                <source [src]="media.video" type="video/mp4" />
+                <source [src]="media().video" type="video/mp4" />
             </video>
 
             <div class="hero__controls">

@@ -53,6 +53,8 @@
     height: 100%;
     object-fit: cover;
     border-radius: inherit;
+    transform: translateZ(0);
+    will-change: transform;
     transition: transform 0.5s ease;
 }
 
