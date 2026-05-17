@@ -3,10 +3,10 @@
         <div class="section-header services__header">
             <h1 class="title">Nuestros servicios</h1>
             <h2 class="subtitle">
-                Descubre todo lo que tenemos para ofrecerte una experiencia inolvidable.
+            Descubre todo lo que tenemos para ofrecerte una experiencia inolvidable.
             </h2>
         </div>
-    
+
         <div class="services__grid">
             @for (service of services; track service.image) {
                 <article class="services__card-wrapper">
@@ -18,14 +18,36 @@
                 </article>
             }
         </div>
+
+        <div class="services-highlight">
+            <div class="services-highlight__card">
+                <div class="services-highlight__icon-content">
+                    <fa-icon 
+                        class="services-highlight__icon" 
+                        [icon]="faWandMagicSparkles">
+                    </fa-icon>
+                </div>
+
+                <div class="services-highlight__content">
+                    <h3 class="services-highlight__title">Eventos y diversión sin límites</h3>
+                    <div class="services-highlight__body">
+                        <p class="services-highlight__text">
+                            Celebra cumpleaños, planes con amigos y eventos empresariales en un ambiente lleno de
+                            adrenalina, música y diversión.
+                        </p>
     
-        <div class="services__description">
-            <p class="services__description-text">
-                Vive momentos llenos de adrenalina, risas y competencia en un solo lugar. Kaboom es el sitio
-                perfecto para celebrar cumpleaños, reunirte con amigos o realizar eventos empresariales.
-                Contamos con horarios flexibles y espacios diseñados para recibir hasta 80 personas en eventos
-                corporativos.
-            </p>
+                        <div class="services-highlight__subtext-content">
+                            <fa-icon 
+                                class="services-highlight__icon" 
+                                [icon]="faUsers">
+                            </fa-icon>
+                            <p class="services-highlight__subtext">
+                                Espacios disponibles para eventos corporativos de hasta 80 personas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </app-herovideo>

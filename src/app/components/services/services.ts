@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 
 import { HeroVideoModel } from '../herovideo/models/hero-video.model';
 import { HeroVideoService } from '../../services/hero-video/hero-video.service';
@@ -8,20 +8,24 @@ import { ModalImgService } from '../../services/modal-img/modal-img.service';
 import { ModalImgModel } from '../modal/models/modal-img.model';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBullseye, faCircleDot, faFire, faExplosion } from '@fortawesome/free-solid-svg-icons';
+import { faBullseye, faCircleDot, faFire, faExplosion, faWandMagicSparkles, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-services',
+  standalone: true,
   imports: [
     CommonModule,
     Herovideo,
     FontAwesomeModule
-],
+  ],
   templateUrl: './services.html',
   styleUrl: './services.scss',
 })
-export class Services {
+export class Services implements OnInit {
+
+  faWandMagicSparkles = faWandMagicSparkles;
+  faUsers = faUsers;
 
   heroVideoMedia!: HeroVideoModel;
 
