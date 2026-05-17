@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { HeroVideoModel } from '../herovideo/models/hero-video.model';
 import { HeroVideoService } from '../../services/hero-video/hero-video.service';
-import { CommonModule } from '@angular/common';
 import { Herovideo } from '../herovideo/herovideo';
 import { Button } from "../button/button";
 
@@ -9,7 +8,6 @@ import { Button } from "../button/button";
   selector: 'app-pricing',
   standalone: true,
   imports: [
-    CommonModule, 
     Herovideo, 
     Button
   ],

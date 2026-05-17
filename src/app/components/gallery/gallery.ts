@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { GalleryModel } from './models/gallery-model';
-import { CommonModule } from '@angular/common';
 import { Button } from "../button/button";
 
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [CommonModule, Button],
+  imports: [Button],
   templateUrl: './gallery.html',
   styleUrl: './gallery.scss',
 })

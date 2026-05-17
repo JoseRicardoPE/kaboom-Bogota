@@ -9,13 +9,11 @@ import { ModalImgModel } from '../modal/models/modal-img.model';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBullseye, faCircleDot, faFire, faExplosion, faWandMagicSparkles, faUsers } from '@fortawesome/free-solid-svg-icons';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-services',
   standalone: true,
   imports: [
-    CommonModule,
     Herovideo,
     FontAwesomeModule
   ],
