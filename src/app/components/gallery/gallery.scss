@@ -17,10 +17,18 @@
     opacity: 0.8;
     border-radius: v.$f-radius-md;
     cursor: pointer;
-    transition: opacity 0.3s ease;
-    
+    transition:
+        opacity 0.3s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
     &:hover {
         opacity: 1;
+        transform: scale(1.03);
+        box-shadow:
+            0 0 calculateRem(10px) rgba(v.$color-secondary, 0.35),
+            0 0 calculateRem(22px) rgba(v.$color-secondary, 0.20),
+            0 0 calculateRem(38px) rgba(v.$color-secondary, 0.12);
     }
 }
 
