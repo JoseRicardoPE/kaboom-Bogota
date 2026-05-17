@@ -6,15 +6,45 @@
 
         <div class="hero__media">
             <video
+                #videoElement
                 class="hero__video"
                 autoplay 
-                muted 
                 loop 
                 playsinline 
                 [attr.poster]="media.poster"
+                preload="metadata"
             >
                 <source [src]="media.video" type="video/mp4" />
             </video>
+
+            <div class="hero__controls">
+                <button
+                    class="hero__play-btn"
+                    (click)="togglePlayPause()"
+                    [attr.aria-label]="isPlaying() ? 'Pausar video' : 'Reproducir video'"
+                    type="button"
+                >
+                    @if (isPlaying()) {
+                        <fa-icon [icon]="faPause" class="hero__play-icon"></fa-icon>
+                    } @else {
+                        <fa-icon [icon]="faPlay" class="hero__play-icon"></fa-icon>
+                    }
+                </button>
+
+                <label for="volume-control" class="hero__volume-label">Volumen</label>
+                <input
+                    id="volume-control"
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.1"
+                    [value]="volume()"
+                    (input)="onVolumeChange($event)"
+                    class="hero__volume-slider"
+                    aria-label="Controlar volumen del video"
+                />
+                <span class="hero__volume-value">{{ (volume() * 100).toFixed(0) }}%</span>
+            </div>
         </div>
     </section>
 }
