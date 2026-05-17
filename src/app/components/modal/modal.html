@@ -6,12 +6,14 @@
         <img 
             class="image-modal__image" 
             [src]="data.image" 
-            [alt]="data.title" 
+            [alt]="data.title"
+            loading="lazy"
+            decoding="async"
         />
         <app-button 
             class="image-modal__link" 
             variant="btn-modal" 
-            href="https://wa.me/573166912393"
+            href="https://wa.me/573166912393?text=Hola%20Kaboom,%20vi%20la%20página%20y%20quiero%20más%20información%20sobre%20los%20planes%20y%20reservas."
             target="_blank"
             ariaLabel="WhatsApp"
             text="Reservar">
