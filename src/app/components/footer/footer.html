@@ -5,52 +5,63 @@
                 <!-- LOGO + DESCRIPCIÓN -->
                 <div class="footer__brand">
                     <a class="footer__brand-link" routerLink="/pricing">
-                        <img src="logos/logoK.svg" alt="Kaboom" class="footer__brand-logo" />
+                        <img src="logos/logoK.svg" alt="Kaboom" class="footer__brand-logo" loading="lazy"
+                            decoding="async" />
                     </a>
-                    <p class="footer__brand-description">Diversión, adrenalina y buenas vibras. Solo en Kaboom 💥</p>
+                    <p class="footer__brand-description">
+                        Diversión, adrenalina y buenas vibras. Solo en Kaboom 💥
+                    </p>
 
                     <!-- Redes Sociales -->
                     <div class="footer__social">
-                        <a class="footer__social-link" href="https://www.tiktok.com/@kaboom.funny" target="_blank" aria-label="TikTok">
+                        <a class="footer__social-link" href="https://www.tiktok.com/@kaboom.funny" target="_blank"
+                            aria-label="TikTok" rel="noopener noreferrer">
                             <fa-icon class="footer__social-icon" [icon]="faTiktok"></fa-icon>
                         </a>
-                        <a class="footer__social-link" href="https://www.instagram.com/kaboom.bogota" target="_blank" aria-label="Instagram">
+                        <a class="footer__social-link" href="https://www.instagram.com/kaboom.bogota" target="_blank"
+                            aria-label="Instagram">
                             <fa-icon class="footer__social-icon" [icon]="faInstagram"></fa-icon>
                         </a>
-                        <a class="footer__social-link" href="https://wa.me/573166912393" target="_blank" aria-label="WhatsApp">
+                        <a class="footer__social-link"
+                            href="https://wa.me/573166912393?text=Hola%20Kaboom,%20vi%20la%20página%20y%20quiero%20más%20información%20sobre%20los%20planes%20y%20reservas."
+                            target="_blank" aria-label="WhatsApp" rel="noopener noreferrer">
                             <fa-icon class="footer__social-icon" [icon]="faWhatsapp"></fa-icon>
                         </a>
                     </div>
                 </div>
-    
+
                 <!-- LINKS -->
                 <div class="footer__nav">
                     <h5 class="footer__nav-title">Enlaces</h5>
                     <ul class="footer__nav-list">
-                        <li class="footer__nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}">
+                        <li class="footer__nav-item" routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }">
                             <a class="footer__nav-link" routerLink="/home">Inicio</a>
                         </li>
-                        <li class="footer__nav-item" routerLinkActive="active" >
+                        <li class="footer__nav-item" routerLinkActive="active">
                             <a class="footer__nav-link" routerLink="/services">Servicios</a>
                         </li>
-                        <li class="footer__nav-item" routerLinkActive="active" >
+                        <li class="footer__nav-item" routerLinkActive="active">
                             <a class="footer__nav-link" routerLink="/pricing">Precios</a>
                         </li>
-                        <li class="footer__nav-item" routerLinkActive="active" >
-                            <a class="footer__nav-link" href="https://wa.me/573166912393" target="_blank" aria-label="WhatsApp">Reservas</a>
+                        <li class="footer__nav-item" routerLinkActive="active">
+                            <a class="footer__nav-link"
+                                href="https://wa.me/573166912393?text=Hola%20Kaboom,%20vi%20la%20página%20y%20quiero%20más%20información%20sobre%20los%20planes%20y%20reservas."
+                                target="_blank" aria-label="WhatsApp" rel="noopener noreferrer">Reservas</a>
                         </li>
                     </ul>
                 </div>
-    
+
                 <!-- CONTACTO -->
                 <div class="footer__contact">
                     <h5 class="footer__contact-title">Contacto</h5>
                     <div class="footer__contact-list">
                         <div class="footer__contact-item">
-                            <fa-icon class="footer__contact-icon" [icon]="faLocation"></fa-icon> 
+                            <fa-icon class="footer__contact-icon" [icon]="faLocation"></fa-icon>
                             <div class="footer__contact-content">
                                 <span class="footer__contact-city">Bogotá, Colombia</span>
-                                <strong class="footer__contact-address">Carrera 18 # 18 - 40 sur | Barrio el Restrepo.</strong>
+                                <strong class="footer__contact-address">Carrera 18 # 18 - 40 sur | Barrio el
+                                    Restrepo.</strong>
                             </div>
                         </div>
                         <div class="footer__contact-item">
@@ -68,7 +79,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <!-- COPYRIGHT -->
             <div class="footer__bottom">
                 <span class="footer__bottom-brand">© 2026 Kaboom.</span>

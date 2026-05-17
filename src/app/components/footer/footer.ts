@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTiktok, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
@@ -14,6 +14,7 @@ import { faMobileScreenButton, faLocationCrosshairs, faEnvelope, faExplosion } f
     RouterLinkActive],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Footer {
   faTiktok = faTiktok;
