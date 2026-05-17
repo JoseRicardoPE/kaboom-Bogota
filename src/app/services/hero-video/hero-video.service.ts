@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HeroVideoModel } from '../../components/herovideo/models/hero-video.model';
 
+type HeroSection = 'home' | 'services' | 'prices' | 'booking' | 'contact';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -28,7 +30,7 @@ export class HeroVideoService {
     },
   };
 
-  getMedia(key: string): HeroVideoModel {
+  getMedia(key: HeroSection): HeroVideoModel {
     return (
       this.mediaMap[key] || {
         video: 'videos/default.mp4',
