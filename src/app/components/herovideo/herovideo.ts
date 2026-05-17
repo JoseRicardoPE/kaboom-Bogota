@@ -5,6 +5,7 @@ import {
   ViewChild,
   ElementRef,
   AfterViewInit,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
@@ -19,6 +20,7 @@ import { HeroVideoModel } from './models/hero-video.model';
   imports: [CommonModule, FontAwesomeModule],
   templateUrl: './herovideo.html',
   styleUrl: './herovideo.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Herovideo implements AfterViewInit {
   media = input<HeroVideoModel>(undefined!);
