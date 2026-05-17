@@ -4,7 +4,7 @@
 @use 'sass:color';
 
 .button {
-    @include font-size(v.$f-size-base);
+    @include font-size(v.$f-size-small);
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@
 .button--modal {
     @include font-size(v.$f-size-small);
     padding: calculateRem(4px) calculateRem(20px);
-    border-radius: calculateRem(2px) calculateRem(16px) calculateRem(2px) calculateRem(16px);
+    border-radius: calculateRem(2px) v.$f-radius-xxl calculateRem(2px) v.$f-radius-xxl;
 }
 
 .button--link {
