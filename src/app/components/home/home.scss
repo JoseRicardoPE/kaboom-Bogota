@@ -16,7 +16,7 @@
     @include backdrop-blur(12px);
     margin-top: calculateRem(64px);
     padding: calculateRem(32px);
-    border-radius: calculateRem(24px);
+    border-radius: v.$f-radius-xxl;
     background: rgba(0,0,0,0.45);
 }
 
@@ -53,7 +53,7 @@
     background: rgba(255,255,255,0.04);
     border: calculateRem(1px) solid rgba(255,255,255,0.08);
     padding: calculateRem(24px);
-    border-radius: v.$f-radius-md;
+    border-radius: v.$f-radius-xl;
     transition: 0.3s ease;
 
     &:hover {
