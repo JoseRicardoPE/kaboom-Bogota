@@ -30,7 +30,7 @@
 }
 
 .footer__brand-description {
-    @include font-size(v.$f-size-small);
+    font-size: v.$f-size-small;
     margin: 0;
     color: v.$color-muted;
 }
@@ -43,7 +43,7 @@
 
 .footer__nav-title,
 .footer__contact-title {
-    @include font-size(v.$f-size-large);
+    font-size: v.$f-size-large;
     width: 100%;
     margin: 0;
     color: v.$color-accent;
@@ -96,13 +96,13 @@
 }
 
 .footer__contact-icon {
-    @include font-size(v.$f-size-medium);
+    font-size: v.$f-size-medium;
     color: v.$color-primary;
 }
 
 .footer__contact-content {
     @include flex-layout(column, flex-start, flex-start, v.$f-gap-tiny );
-    @include font-size(v.$f-size-small);
+    font-size: v.$f-size-small;
     margin: 0;
     color: v.$color-muted;
 }
@@ -110,12 +110,12 @@
 .footer__contact-city,
 .footer__contact-phone,
 .footer__contact-email {
-    @include font-size(v.$f-size-small);
+    font-size: v.$f-size-small;
     color: v.$color-muted;
 }
 
 .footer__contact-address {
-    @include font-size(v.$f-size-small);
+    font-size: v.$f-size-small;
     color: v.$color-white;
     font-weight: v.$f-weight-semi-bold;
 }
@@ -125,7 +125,7 @@
 }
 
 .footer__social-link {
-    @include font-size(v.$f-size-large);
+    font-size: v.$f-size-large;
     color: v.$color-accent;
     transition:
         transform .3s ease,
@@ -151,7 +151,7 @@
 
 .footer__bottom-brand, 
 .footer__bottom-text {
-    @include font-size(v.$f-size-tiny);
+    font-size: v.$f-size-tiny;
     margin: 0;
     color: v.$color-muted;
 }

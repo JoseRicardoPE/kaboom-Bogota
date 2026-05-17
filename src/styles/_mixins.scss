@@ -2,11 +2,6 @@
 @use 'functions' as *;
 @use 'vars' as v;
 
-//? Mixin para asignar font-size en rem a partir de una variable en px
-@mixin font-size($size) {
-    font-size: calculateRem($size);
-}
-
 //? Mixin para asignar flexbox con parámetros personalizables
 @mixin flex-layout(
   $direction: row,
@@ -28,10 +23,10 @@
   $color,
   $margin-bottom: 0,
 ) {
-  @include font-size($size);
-  font-weight: $weight;
-  color: $color;
-  margin-bottom: $margin-bottom;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    margin-bottom: $margin-bottom;
 }
 
 //? Mixin para filtros de fondo borroso con soporte WebKit
@@ -44,22 +39,30 @@
 @mixin section-titles {
   .title {
     @include text-style(
-      v.$f-size-huge,
+      v.$f-size-huge-small,
       v.$f-weight-bold,
       v.$color-accent,
       0
     );
     line-height: v.$f-line-height-normal;
+
+    @include respond(tablet) {
+      font-size: v.$f-size-huge;
+    }
   }
 
   .subtitle {
     @include text-style(
-      v.$f-size-large,
+      v.$f-size-base,
       v.$f-weight-medium,
       v.$color-muted,
       0
     );
     line-height: v.$f-line-height-normal;
+
+    @include respond(tablet) {
+      font-size: v.$f-size-large;
+    }
   }
 }
 
@@ -84,16 +87,6 @@
     transform .35s ease,
     box-shadow .35s ease,
     border-color .35s ease;
-  &:hover {
-    transform: scale(1.03);
-    @if $hasBorder {
-      border-color: rgba($borderColor, 0.22);
-    }
-    box-shadow: 
-      0 0 calculateRem(10px) rgba($glowColor, 0.35),
-      0 0 calculateRem(22px) rgba($glowColor, 0.20),
-      0 0 calculateRem(38px) rgba($glowColor, 0.12);
-  }
 }
 
 //? Mixin para los break point (media queries)
