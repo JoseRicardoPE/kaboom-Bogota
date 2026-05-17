@@ -19,7 +19,7 @@
     padding: calculateRem(32px);
     text-align: center;
     background: v.$color-dark;
-    border-radius: v.$f-radius-lg;
+    border-radius: v.$f-radius-xxl;
     color: v.$color-white;
     transition: all 0.3s ease;
 
@@ -55,14 +55,62 @@
     margin-bottom: 0
 }
 
-.services__description {
-    @include text-style(v.$f-size-base, v.$f-weight-regular, v.$color-muted, 0);
-    line-height: v.$f-line-height-relaxed;
-    text-align: center;
+.services-highlight {
+    margin: calculateRem(32px) 0;
 }
 
-.services__description-text {
-    margin-bottom: 0;
+.services-highlight__card {
+    @include backdrop-blur(12px);
+    max-width: calculateRem(820px);
+    background: rgba(0,0,0,0.45);
+    margin-inline: auto;
+    padding: calculateRem(24px);
+    text-align: center;
+    border-radius: v.$f-radius-xxl;
+}
+
+.services-highlight__icon {
+    @include font-size(v.$f-size-xx-large);
+    color: v.$color-highlight;
+    filter: drop-shadow(0 0 calculateRem(10px) rgba(0, 213, 255, 0.45));
+}
+
+.services-highlight__title {
+    @include text-style(v.$f-size-x-large, v.$f-weight-bold, v.$color-white, 0);
+    margin: calculateRem(16px) 0;
+    line-height: v.$f-line-height-normal;
+}
+
+.services-highlight__text {
+    @include font-size(v.$f-size-base);
+    margin: 0 0 calculateRem(20px);
+    color: v.$color-muted;
+    line-height: v.$f-line-height-normal;
+}
+
+.services-highlight__subtext-content {
+    @include flex-layout(row, center, center, v.$f-gap-tiny);
+    padding: calculateRem(20px) 0 0;
+    border-top: calculateRem(2px) solid rgba(255, 255, 255, 0.1);
+    
+    .services-highlight__icon {
+        color: transparent;
+        ::ng-deep svg {
+            fill: transparent;
+            stroke: v.$color-highlight;
+            stroke-width: 28;
+            filter:
+                drop-shadow(0 0 calculateRem(4px) rgba(0, 213, 255, 0.45));
+        }
+    }
+}
+
+.services-highlight__subtext {
+    @include font-size(v.$f-size-small);
+    margin: 0;
+    color: v.$color-muted;
+    line-height: v.$f-line-height-normal;
+    text-align: left;
 }
 
 /* RESPONSIVE */
@@ -70,5 +118,50 @@
 @include respond(mobile) {
     .services__card-wrapper {
         width: calculateRem(380px);
+    }
+}
+
+@include respond(tablet) {
+    
+    .services-highlight__card {
+        @include flex-layout(row, center, center, v.$f-gap-md);
+        padding: calculateRem(32px) calculateRem(48px);
+    }
+
+    .services-highlight__icon-content {
+        border: calculateRem(2px) solid v.$color-highlight;
+        padding: calculateRem(32px);
+        border-radius: v.$f-radius-round;
+        box-shadow:
+        0 0 calculateRem(4px) rgba(0, 213, 255, 0.35),
+        0 0 calculateRem(10px) rgba(0, 213, 255, 0.22),
+        0 0 calculateRem(18px) rgba(0, 213, 255, 0.12),
+        inset 0 0 calculateRem(8px) rgba(0, 213, 255, 0.14);
+    }
+    
+    .services-highlight__icon {
+        @include font-size(v.$f-size-huge);
+        display: block;
+        width: max-content;
+    }
+
+    .services-highlight__title {
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .services-highlight__body {
+        @include flex-layout(column, center, flex-start, 0);
+    }
+
+    .services-highlight__subtext-content {
+        gap: v.$f-gap-sm;
+        .services-highlight__icon {
+            font-size: v.$f-size-x-large;
+        }
+    }
+
+    .services-highlight__text {
+        text-align: left;
     }
 }
