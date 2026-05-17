@@ -1,9 +1,19 @@
-import { Component, inject } from '@angular/core';
-import { HeroVideoModel } from '../herovideo/models/hero-video.model';
-import { HeroVideoService } from '../../services/hero-video/hero-video.service';
-import { Herovideo } from '../herovideo/herovideo';
-import { Button } from "../button/button";
+import { 
+  Component, 
+  inject, 
+  OnInit,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
+import { Button } from "../button/button";
+import { Herovideo } from '../herovideo/herovideo';
+
+import { PricingModel } from './models/pricing.model';
+import { HeroVideoModel } from '../herovideo/models/hero-video.model';
+
+import { PRICING_DATA } from './data/pricing.data';
+
+import { HeroVideoService } from '../../services/hero-video/hero-video.service';
 @Component({
   selector: 'app-pricing',
   standalone: true,
@@ -13,45 +23,17 @@ import { Button } from "../button/button";
   ],
   templateUrl: './pricing.html',
   styleUrl: './pricing.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Pricing {
+export class Pricing implements OnInit {
 
   heroVideoMedia!: HeroVideoModel;
 
   heroVideoService = inject(HeroVideoService);
 
-  services = [
-    {
-      title: 'Bolirana',
-      price: '$10.000 / hora',
-      extra: 'Incluye 1 bebida de cortesía (Servicio sin reserva, dependiendo disponibilidad).',
-      image: 'images/prices/bolirana.webp',
-      hasBooking: false,
-    },
-    {
-      title: 'Tiro de hacha',
-      price: '$22.000 / hora',
-      extra: 'Incluye 2 bebidas de cortesía',
-      image: 'images/prices/tiroHacha.webp',
-      hasBooking: true,
-    },
-    {
-      title: 'Tejo',
-      price: '$22.000 / hora',
-      extra: 'Incluye 2 bebidas de cortesía',
-      image: 'images/prices/tejo.webp',
-      hasBooking: true,
-    },
-    {
-      title: 'Máquina de boxeo',
-      price: '$2.000 - $20.000',
-      extra: 'El valor depende de la cantidad de golpes que desees jugar. (Servicio sin reserva, dependiendo disponibilidad).',
-      image: 'images/prices/boxeo.webp',
-      hasBooking: false,
-    },
-  ];
+  services: PricingModel[] = PRICING_DATA;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.heroVideoMedia = this.heroVideoService.getMedia('prices');
   }
 }

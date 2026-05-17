@@ -13,6 +13,8 @@
                 <img class="pricing-card__image" 
                     [src]="service.image" 
                     [alt]="service.title"
+                    loading="lazy"
+                    decoding="async"
                 />
 
                 <!-- OVERLAY (SOLO HOVER) -->
@@ -27,7 +29,7 @@
                         <app-button
                             class="pricing-card__button"
                             text="Reservar"
-                            href="https://wa.me/573166912393"
+                            href="https://wa.me/573166912393?text=Hola%20Kaboom,%20vi%20la%20página%20y%20quiero%20más%20información%20sobre%20los%20planes%20y%20reservas."
                             target="_blank"
                         ></app-button>
                     }
