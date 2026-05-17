@@ -17,6 +17,6 @@ export class Button {
   routerLink = input<string | undefined>(undefined);
   ariaLabel = input<string | undefined>(undefined);
   target = input<'_blank' | '_self' | '_parent' | '_top'>('_self');
-  variant = input<'primary' | 'secondary' | 'tertiary' | 'link' | 'btn-modal'>('primary');
+  variant = input<'primary' | 'link' | 'btn-modal'>('primary');
   disabled = input(false);
 }
