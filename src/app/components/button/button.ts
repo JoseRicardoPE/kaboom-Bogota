@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
@@ -11,12 +11,12 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
   styleUrl: './button.scss',
 })
 export class Button {
-  @Input() icon?: IconProp;
-  @Input() text = '';
-  @Input() href?: string;
-  @Input() routerLink?: string;
-  @Input() ariaLabel?: string;
-  @Input() target: '_blank' | '_self' | '_parent' | '_top' = '_self';
-  @Input() variant: 'primary' | 'secondary' | 'tertiary' | 'link' | 'btn-modal' = 'primary';
-  @Input() disabled = false;
+  icon = input<IconProp | undefined>(undefined);
+  text = input('');
+  href = input<string | undefined>(undefined);
+  routerLink = input<string | undefined>(undefined);
+  ariaLabel = input<string | undefined>(undefined);
+  target = input<'_blank' | '_self' | '_parent' | '_top'>('_self');
+  variant = input<'primary' | 'secondary' | 'tertiary' | 'link' | 'btn-modal'>('primary');
+  disabled = input(false);
 }
