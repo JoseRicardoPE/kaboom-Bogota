@@ -24,7 +24,7 @@
         background-color: color.adjust(v.$color-primary, $lightness: -10%);
     }
 
-    &:active.button--link {
+    &.button--link:active {
         border-color: color.adjust(v.$color-primary, $lightness: -10%);
     }
 
