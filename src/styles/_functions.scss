@@ -8,11 +8,6 @@ $base-font-size: 16px;
         @return math.div($size, $base-font-size) * 1rem;
     }
 
-    //! Ya está en rem, no hace nada
-    @else if math.unit($size) == "rem" {
-        @return $size;
-    }
-
     @warn "Valor #{$size} no tiene unidad válida para convertir a rem.";
     @return $size; 
 }
