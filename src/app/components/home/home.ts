@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { HeroVideoModel } from '../herovideo/models/hero-video.model';
 import { HeroVideoService } from '../../services/hero-video/hero-video.service';
 import { Herovideo } from '../herovideo/herovideo';
@@ -18,6 +18,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   templateUrl: './home.html',
   styleUrl: './home.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Home {
 
