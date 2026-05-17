@@ -21,12 +21,16 @@
     background: v.$color-dark;
     border-radius: v.$f-radius-xxl;
     color: v.$color-white;
-    transition: all 0.3s ease;
 
     &:hover {
-        @include neon-card(v.$color-accent, v.$color-accent);
+        transform: scale(1.03);
+        border-color: rgba(v.$color-accent, 0.22);
+        box-shadow:
+            0 0 calculateRem(10px) rgba(v.$color-accent, 0.35),
+            0 0 calculateRem(22px) rgba(v.$color-accent, 0.20),
+            0 0 calculateRem(38px) rgba(v.$color-accent, 0.12);
         background: v.$color-dark;
-    
+
         .services__card-icon {
             color: v.$color-accent;
             transform: scale(1.2);
@@ -35,22 +39,24 @@
 }
 
 .services__card-icon {
-    @include font-size(v.$f-size-xx-huge);
+    font-size: v.$f-size-xx-huge;
     color: v.$color-primary;
     margin-bottom: v.$f-gap-tiny;
-    transition: all 0.3s ease;
+    transition: 
+        color 0.3s ease, 
+        transform 0.3s ease;
 }
 
 
 .services__card-title {
-    @include font-size(v.$f-size-x-large);
+    font-size: v.$f-size-x-large;
     margin-bottom: v.$f-gap-tiny;
     font-weight: v.$f-weight-bold;
     line-height: v.$f-line-height-relaxed;
 }
 
 .services__card-description {
-    @include font-size(v.$f-size-small);
+    font-size: v.$f-size-small;
     color: v.$color-muted;
     margin-bottom: 0
 }
@@ -70,7 +76,7 @@
 }
 
 .services-highlight__icon {
-    @include font-size(v.$f-size-xx-large);
+    font-size: v.$f-size-xx-large;
     color: v.$color-highlight;
     filter: drop-shadow(0 0 calculateRem(10px) rgba(0, 213, 255, 0.45));
 }
@@ -82,7 +88,7 @@
 }
 
 .services-highlight__text {
-    @include font-size(v.$f-size-base);
+    font-size: v.$f-size-base;
     margin: 0 0 calculateRem(20px);
     color: v.$color-muted;
     line-height: v.$f-line-height-normal;
@@ -106,7 +112,7 @@
 }
 
 .services-highlight__subtext {
-    @include font-size(v.$f-size-small);
+    font-size: v.$f-size-small;
     margin: 0;
     color: v.$color-muted;
     line-height: v.$f-line-height-normal;
@@ -140,7 +146,7 @@
     }
     
     .services-highlight__icon {
-        @include font-size(v.$f-size-huge);
+        font-size: v.$f-size-huge;
         display: block;
         width: max-content;
     }
