@@ -5,9 +5,9 @@
 body {
     min-height: 100vh;
     padding-top: calculateRem(90px);
-    background-image: url('/images/backgrounds/backgroundKaboom.webp');
+    background-image: url('/assets/images/backgrounds/backgroundKaboom.webp');
     background-size: cover;
-    background-position: center;
+    background-position: 50% 20%;
     font-family: v.$font-family-main;
     overscroll-behavior: none;
     line-height: v.$f-line-height-normal;
