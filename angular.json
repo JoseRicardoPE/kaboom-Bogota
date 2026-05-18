@@ -25,16 +25,16 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
             ],
-            "styles": [
-              "src/styles/styles.scss"
-            ],
+            "styles": ["src/styles/styles.scss"],
             "polyfills": ["@angular/localize/init"],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "src/styles"
-              ]
+              "includePaths": ["src/styles"]
             }
           },
           "configurations": {
