@@ -1,11 +1,13 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { Button } from "../button/button";
 
 @Component({
   selector: 'app-notfound',
+  standalone: true,
   imports: [Button],
   templateUrl: './notfound.html',
   styleUrl: './notfound.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Notfound implements OnInit, OnDestroy { 
 
