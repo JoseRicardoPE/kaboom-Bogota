@@ -21,4 +21,8 @@ export class Header {
   toggleMenu() {
     this.isMenuCollapsed = !this.isMenuCollapsed;
   }
+
+  closeMenu() {
+    this.isMenuCollapsed = true;
+  }
 }
