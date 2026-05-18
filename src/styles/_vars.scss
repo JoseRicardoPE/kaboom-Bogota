@@ -31,6 +31,7 @@ $f-size-medium: calculateRem(18px);
 $f-size-large: calculateRem(20px);
 $f-size-x-large: calculateRem(24px);
 $f-size-xx-large: calculateRem(28px);
+$f-size-huge-small: calculateRem(32px);
 $f-size-huge: calculateRem(34px);
 $f-size-x-huge: calculateRem(36px);
 $f-size-xx-huge: calculateRem(40px);
@@ -71,6 +72,14 @@ $f-shadow-soft: 0 calculateRem(4px) calculateRem(10px) rgba(0, 0, 0, 0.15);
 $f-shadow-inset-soft: inset 0 0 calculateRem(6px) rgba(0, 0, 0, 0.1);
 $f-shadow-strong: 0 calculateRem(6px) calculateRem(20px) rgba(0, 0, 0, 0.25);
 $f-shadow-control: inset 0 calculateRem(2px) calculateRem(4px) rgba(0, 0, 0, 0.15);
+
+/* Z-INDEX TOKENS  */
+
+$z-index-base: 1;
+$z-index-elevated: 10;
+$z-index-dropdown: 100;
+$z-index-modal: 1000;
+$z-index-tooltip: 1100;
 
 /* BREAKPOINTS */
 
