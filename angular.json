@@ -32,10 +32,16 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles/styles.scss"],
-            "polyfills": ["@angular/localize/init"],
+            "styles": [
+              "src/styles/styles.scss"
+            ],
+            "polyfills": [
+              "@angular/localize/init"
+            ],
             "stylePreprocessorOptions": {
-              "includePaths": ["src/styles"]
+              "includePaths": [
+                "src/styles"
+              ]
             }
           },
           "configurations": {
@@ -52,6 +58,13 @@
                   "maximumError": "8kB"
                 }
               ],
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                }
+              },
               "outputHashing": "all"
             },
             "development": {
