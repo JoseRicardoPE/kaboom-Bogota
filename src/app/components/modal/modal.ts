@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostListener } from '@angular/core';
 import { ModalImgModel } from './models/modal-img.model';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Button } from "../button/button";
@@ -14,4 +14,10 @@ export class Modal {
   @Input() data!: ModalImgModel;
 
   constructor(public activeModal: NgbActiveModal) {}
+
+  @HostListener('window:popstate')
+  onPopState(): void {
+    this.activeModal.close();
+  }
+
 }
