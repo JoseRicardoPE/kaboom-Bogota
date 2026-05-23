@@ -28,7 +28,7 @@ export class Herovideo implements AfterViewInit {
   @ViewChild('videoElement')
   videoElement!: ElementRef<HTMLVideoElement>;
 
-  volume = signal(0.5);
+  volume = signal(0);
   isPlaying = signal(false);
 
   faPlay = faPlay;
@@ -38,7 +38,8 @@ export class Herovideo implements AfterViewInit {
     const video = this.videoElement.nativeElement;
 
     // Volumen inicial
-    video.volume = this.volume();
+    video.muted = true;
+    video.volume = 0;
 
     // Intentar reproducir automáticamente
     video
