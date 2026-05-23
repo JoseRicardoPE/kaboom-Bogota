@@ -11,7 +11,6 @@
     "test": "ng test",
     "deploy": "ng build --configuration production --base-href /kaboom-Bogota/ && npx ngh --dir=dist/kaboom_bogota_spa/browser",
     "deploy:gh": "npm run build:gh && npx ngh --dir=dist/kaboom_bogota_spa/browser",
-    "deploy:gh:cname": "npm run build:gh && npx ngh --dir=dist/kaboom_bogota_spa/browser --cname YOUR_CUSTOM_DOMAIN",
     "prepare:prod": "npm run build:prod"
   },
   "private": true,

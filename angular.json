@@ -22,7 +22,6 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
-            "deployUrl": "/kaboom-Bogota/",
             "outputPath": "dist/kaboom_bogota_spa/browser",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
