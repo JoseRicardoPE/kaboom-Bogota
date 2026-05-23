@@ -2,6 +2,10 @@
 @use 'vars' as v;
 @use 'mixins' as *;
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
     padding-top: calculateRem(90px);
