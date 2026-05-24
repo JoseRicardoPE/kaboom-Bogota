@@ -9,7 +9,7 @@
     "build:gh": "ng build --configuration production --base-href=/kaboom-Bogota/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng build --configuration production --base-href /kaboom-Bogota/ && npx ngh --dir=dist/kaboom_bogota_spa/browser",
+    "deploy": "npm run build:gh && npx angular-cli-ghpages --dir=dist/kaboom_bogota_spa/browser",
     "deploy:gh": "npm run build:gh && npx ngh --dir=dist/kaboom_bogota_spa/browser",
     "prepare:prod": "npm run build:prod"
   },
