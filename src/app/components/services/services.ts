@@ -15,6 +15,7 @@ import { SERVICES_DATA } from './data/services.data';
 
 import { HeroVideoService } from '../../services/hero-video/hero-video.service';
 import { ModalImgService } from '../../services/modal-img/modal-img.service';
+import { NavbarStateService } from '../../services/navbar/navbar-state.service';
 
 
 @Component({
@@ -30,20 +31,37 @@ import { ModalImgService } from '../../services/modal-img/modal-img.service';
 })
 export class Services implements OnInit {
 
+  private navbarState = inject(NavbarStateService);
+  private heroVideoService = inject(HeroVideoService);
+  private modalImgService = inject(ModalImgService);
+
   services: ServiceModel[] = SERVICES_DATA;
   heroVideoMedia!: HeroVideoModel;
-
-  heroVideoService = inject(HeroVideoService);
-  modalImgService = inject(ModalImgService);
 
   faWandMagicSparkles = faWandMagicSparkles;
   faUsers = faUsers;
 
   ngOnInit() {
+    this.heroVideo();
+  }
+
+  heroVideo() {
     this.heroVideoMedia = this.heroVideoService.getMedia('services');
   }
 
-  openModal(service: ServiceModel) {
+  private unlockBodyScroll() {
+    document.body.style.overflow = '';
+  }
+
+  openModal(service: ServiceModel): void {
+
+    //? Cerrar el menú si está abierto.
+    this.navbarState.setCollapsed(true);
+
+    //? Restaura el scroll antes de abrir el modal, para evitar que quede bloqueado si el usuario hizo scroll y luego abrió un modal.
+    this.unlockBodyScroll();
+
+    //? Abrir el modal.
     this.modalImgService.openModal(service);
   }
 

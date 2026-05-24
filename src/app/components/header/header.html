@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom">
+<nav #navbar class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom">
     <div class="layout-wrapper">
         <div class="navbar-top">
             
@@ -30,21 +30,24 @@
             class="navbar-collapse collapse" 
             id="navbarKaboom"
             [ngbCollapse]="isMenuCollapsed">
-            <div class="navbar-nav">
-                <a class="nav-link" routerLinkActive="active" routerLink="/home" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Inicio</a>
-                <a class="nav-link" routerLinkActive="active" routerLink="/services" (click)="closeMenu()">Servicios</a>
-                <a class="nav-link" routerLinkActive="active" routerLink="/pricing" (click)="closeMenu()">Precios</a>
-                <a class="nav-link" routerLinkActive="active" routerLink="/gallery" (click)="closeMenu()">Galería</a>
-
-                <!-- BOTÓN DESTACADO -->
-                 <app-button
-                    text="Reservar"
-                    href="https://wa.me/573166912393?text=Hola%20Kaboom,%20vi%20la%20página%20y%20quiero%20más%20información%20sobre%20los%20planes%20y%20reservas."
-                    target="_blank"
-                    ariaLabel="WhatsApp"
-                    (click)="closeMenu()"
-                 >
-                 </app-button>
+            <div class="navbar-fade-content"
+                [class.show]="!isMenuCollapsed">
+                <div class="navbar-nav">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/home" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Inicio</a>
+                    <a class="nav-link" routerLinkActive="active" routerLink="/services" (click)="closeMenu()">Servicios</a>
+                    <a class="nav-link" routerLinkActive="active" routerLink="/pricing" (click)="closeMenu()">Precios</a>
+                    <a class="nav-link" routerLinkActive="active" routerLink="/gallery" (click)="closeMenu()">Galería</a>
+    
+                    <!-- BOTÓN DESTACADO -->
+                     <app-button
+                        text="Reservar"
+                        href="https://wa.me/573166912393?text=Hola%20Kaboom,%20vi%20la%20página%20y%20quiero%20más%20información%20sobre%20los%20planes%20y%20reservas."
+                        target="_blank"
+                        ariaLabel="WhatsApp"
+                        (click)="closeMenu()"
+                     >
+                     </app-button>
+                </div>
             </div>
         </div>
     </div>

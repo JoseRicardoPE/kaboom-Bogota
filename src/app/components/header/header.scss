@@ -57,6 +57,16 @@
         width: 100%;
     }
 
+    .navbar-fade-content {
+        transition: opacity 200ms ease, transform 200ms ease;
+        opacity: 0;
+        transform: translateY(-8px);
+        &.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     .navbar-nav {
         @include flex-layout(column, center, center, v.$f-gap-sm);
         width: 100%;
@@ -102,8 +112,14 @@
             justify-content: flex-end;
             width: auto;
         }
+        .navbar-fade-content {
+            opacity: initial;
+            transform: none;
+            transition: none;
+        }
         .navbar-nav {
-            @include flex-layout(row, center, flex-end, v.$f-gap-lg);
+            flex-direction: row;
+            gap: v.$f-gap-lg;
             width: auto;
             padding: 0;
         }
