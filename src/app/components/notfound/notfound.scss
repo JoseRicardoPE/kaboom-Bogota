@@ -101,6 +101,10 @@
     line-height: v.$f-line-height-relaxed;
 }
 
+.notfound__button {
+    margin-top: calculateRem(16px);
+}
+
 /* RESPONSIVE */
 
 @include respond(tablet) {
