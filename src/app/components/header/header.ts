@@ -11,11 +11,14 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 import {
   RouterLink,
-  RouterLinkActive
+  RouterLinkActive,
+  Router,
+  NavigationStart
 } from '@angular/router';
 
 import { Button } from '../button/button';
 import { NavbarStateService } from '../../services/navbar/navbar-state.service';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -31,20 +34,31 @@ import { NavbarStateService } from '../../services/navbar/navbar-state.service';
 })
 export class Header implements OnInit {
 
-  isMenuCollapsed = true;
-
   navbarState = inject(NavbarStateService);
+  router = inject(Router);
+  
+  isMenuCollapsed = true;
 
   @ViewChild('navbar', { static: true })
   navbar!: ElementRef;
 
   ngOnInit(): void {
     this.collapsedMenu();
+    this.closeMenuOnNavigation();
   }
 
   collapsedMenu() {
     this.navbarState.collapsed$.subscribe(value => {
       this.isMenuCollapsed = value;
+    })
+  }
+
+  closeMenuOnNavigation(): void {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationStart)
+    ).subscribe(() => {
+      if (!this.isMenuCollapsed) 
+        this.closeMenu();
     })
   }
 

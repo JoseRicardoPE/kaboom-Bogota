@@ -1,12 +1,12 @@
-<nav #navbar class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom">
+<nav #navbar class="navbar navbar-expand-lg navbar-dark bg-dark header">
     <div class="layout-wrapper">
-        <div class="navbar-top">
+        <div class="header__top">
             
             <!-- LOGO -->
-            <div class="navbar-brand-logo-container">
-                <a class="navbar-brand navbar-custom-brand" routerLink="/pricing" (click)="closeMenu()">
+            <div class="header__brand-container">
+                <a class="navbar-brand header__brand" routerLink="/pricing" (click)="closeMenu()">
                     <img 
-                        class="navbar-custom-brand-img" 
+                        class="header__brand-img" 
                         src="assets/logos/logoK.svg" 
                         alt="Kaboom" 
                         loading="lazy"
@@ -17,7 +17,7 @@
     
             <!-- BOTÓN MOBILE -->
             <button
-                class="navbar-toggler"
+                class="navbar-toggler header__toggler"
                 type="button"
                 (click)="toggleMenu()"
             >
@@ -27,16 +27,16 @@
 
         <!-- MENÚ -->
         <div 
-            class="navbar-collapse collapse" 
+            class="navbar-collapse collapse header__collapse" 
             id="navbarKaboom"
             [ngbCollapse]="isMenuCollapsed">
-            <div class="navbar-fade-content"
-                [class.show]="!isMenuCollapsed">
-                <div class="navbar-nav">
-                    <a class="nav-link" routerLinkActive="active" routerLink="/home" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Inicio</a>
-                    <a class="nav-link" routerLinkActive="active" routerLink="/services" (click)="closeMenu()">Servicios</a>
-                    <a class="nav-link" routerLinkActive="active" routerLink="/pricing" (click)="closeMenu()">Precios</a>
-                    <a class="nav-link" routerLinkActive="active" routerLink="/gallery" (click)="closeMenu()">Galería</a>
+            <div class="header__fade"
+                [class.header__fade--show]="!isMenuCollapsed">
+                <div class="header__nav">
+                    <a class="header__link" routerLinkActive="active" routerLink="/home" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Inicio</a>
+                    <a class="header__link" routerLinkActive="active" routerLink="/services" (click)="closeMenu()">Servicios</a>
+                    <a class="header__link" routerLinkActive="active" routerLink="/pricing" (click)="closeMenu()">Precios</a>
+                    <a class="header__link" routerLinkActive="active" routerLink="/gallery" (click)="closeMenu()">Galería</a>
     
                     <!-- BOTÓN DESTACADO -->
                      <app-button
