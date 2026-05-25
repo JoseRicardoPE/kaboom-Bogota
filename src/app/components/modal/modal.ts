@@ -1,4 +1,4 @@
-import { Component, Input, HostListener } from '@angular/core';
+import { Component, Input, HostListener, inject } from '@angular/core';
 import { ModalImgModel } from './models/modal-img.model';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Button } from "../button/button";
@@ -11,9 +11,10 @@ import { Button } from "../button/button";
   styleUrl: './modal.scss',
 })
 export class Modal {
-  @Input() data!: ModalImgModel;
+  
+  activeModal = inject(NgbActiveModal);
 
-  constructor(public activeModal: NgbActiveModal) {}
+  @Input() data!: ModalImgModel;
 
   @HostListener('window:popstate')
   onPopState(): void {
