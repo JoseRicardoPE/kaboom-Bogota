@@ -35,16 +35,18 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles/styles.scss"
-            ],
-            "polyfills": [
-              "@angular/localize/init"
-            ],
+            "styles": ["src/styles/styles.scss"],
+            "polyfills": ["@angular/localize/init"],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "src/styles"
-              ]
+              "includePaths": ["src/styles"]
+            },
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "security": {
+              "allowedHosts": []
+            },
+            "ssr": {
+              "entry": "src/server.ts"
             }
           },
           "configurations": {
