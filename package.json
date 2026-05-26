@@ -8,7 +8,7 @@
     "build:prod": "ng build --configuration production",
     "build:gh": "ng build --configuration production",
     "build:static": "ng build && copy dist\\kaboom_bogota_spa\\browser\\index.csr.html dist\\kaboom_bogota_spa\\browser\\index.html && copy dist\\kaboom_bogota_spa\\browser\\index.csr.html dist\\kaboom_bogota_spa\\browser\\404.html",
-    "deploy": "npm run build:static && angular-cli-ghpages --dir=dist/kaboom_bogota_spa/browser --no-build",
+    "deploy": "npm run build:static && angular-cli-ghpages --dir=dist/kaboom_bogota_spa/browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy:gh": "npm run build:gh && npx ngh --dir=dist/kaboom_bogota_spa/browser",
