@@ -6,8 +6,8 @@ import { Gallery } from './components/gallery/gallery';
 import { Notfound } from './components/notfound/notfound';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', component: Home },
+    { path: '', component: Home },
+    { path: 'home', redirectTo: '', pathMatch: 'full' },
     { path: 'services', component: Services },
     { path: 'pricing', component: Pricing },
     { path: 'gallery', component: Gallery },
