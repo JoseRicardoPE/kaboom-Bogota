@@ -1,4 +1,5 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { Button } from "../button/button";
 
 @Component({
@@ -11,11 +12,13 @@ import { Button } from "../button/button";
 })
 export class Notfound implements OnInit, OnDestroy { 
 
+  private document = inject(DOCUMENT);
+
   ngOnInit(): void {
-    document.body.classList.add('not-found-page');
+    this.document.body.classList.add('not-found-page');
   }
 
   ngOnDestroy(): void {
-    document.body.classList.remove('not-found-page');
+    this.document.body.classList.remove('not-found-page');
   }
 }

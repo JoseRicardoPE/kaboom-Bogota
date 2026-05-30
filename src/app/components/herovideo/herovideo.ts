@@ -5,10 +5,12 @@ import {
   ViewChild,
   ElementRef,
   AfterViewInit,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
+  PLATFORM_ID,
+  inject
 } from '@angular/core';
 
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 
@@ -23,7 +25,12 @@ import { HeroVideoModel } from './models/hero-video.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Herovideo implements AfterViewInit {
+  
   media = input<HeroVideoModel>(undefined!);
+
+  private platformId = inject(PLATFORM_ID);
+
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   @ViewChild('videoElement')
   videoElement!: ElementRef<HTMLVideoElement>;
@@ -35,7 +42,12 @@ export class Herovideo implements AfterViewInit {
   faPause = faPause;
 
   ngAfterViewInit(): void {
-    const video = this.videoElement.nativeElement;
+
+    if (!this.isBrowser) return;
+
+    const video = this.videoElement?.nativeElement;
+
+    if (!video) return;
 
     // Volumen inicial
     video.muted = true;
@@ -68,6 +80,8 @@ export class Herovideo implements AfterViewInit {
 
     this.volume.set(numValue);
 
+    if (!this.isBrowser) return;
+
     if (this.videoElement) {
       const video = this.videoElement.nativeElement;
 
@@ -79,6 +93,9 @@ export class Herovideo implements AfterViewInit {
   }
 
   togglePlayPause(): void {
+
+    if (!this.isBrowser) return;
+    
     if (!this.videoElement) return;
 
     const video = this.videoElement.nativeElement;

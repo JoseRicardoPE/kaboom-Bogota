@@ -17,6 +17,9 @@ import { HeroVideoService } from '../../services/hero-video/hero-video.service';
 import { ModalImgService } from '../../services/modal-img/modal-img.service';
 import { NavbarStateService } from '../../services/navbar/navbar-state.service';
 
+import { SeoService } from '../../services/seo-service/seo.service';
+import { SEO_PAGES } from '../../constants/seo.constants';
+
 
 @Component({
   selector: 'app-services',
@@ -34,6 +37,7 @@ export class Services implements OnInit {
   private navbarState = inject(NavbarStateService);
   private heroVideoService = inject(HeroVideoService);
   private modalImgService = inject(ModalImgService);
+  private seoService = inject(SeoService);
 
   services: ServiceModel[] = SERVICES_DATA;
   heroVideoMedia!: HeroVideoModel;
@@ -43,6 +47,7 @@ export class Services implements OnInit {
 
   ngOnInit() {
     this.heroVideo();
+    this.setSeoData();
   }
 
   heroVideo() {
@@ -63,6 +68,10 @@ export class Services implements OnInit {
 
     //? Abrir el modal.
     this.modalImgService.openModal(service);
+  }
+
+  private setSeoData(): void {
+    this.seoService.updateSeo(SEO_PAGES.SERVICES);
   }
 
 }
