@@ -1,4 +1,4 @@
-import { SeoModel } from '../models/seo-model/seo.model';
+import { SeoModel } from '../../models/seo-model/seo.model';
 
 export const SEO_PAGES = {
 

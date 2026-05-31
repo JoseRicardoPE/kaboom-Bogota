@@ -18,7 +18,7 @@ import { ModalImgService } from '../../services/modal-img/modal-img.service';
 import { NavbarStateService } from '../../services/navbar/navbar-state.service';
 
 import { SeoService } from '../../services/seo-service/seo.service';
-import { SEO_PAGES } from '../../constants/seo.constants';
+import { SEO_PAGES } from '../../constants/seo/seo.constants';
 
 
 @Component({

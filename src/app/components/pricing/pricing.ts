@@ -16,7 +16,7 @@ import { PRICING_DATA } from './data/pricing.data';
 import { HeroVideoService } from '../../services/hero-video/hero-video.service';
 
 import { SeoService } from '../../services/seo-service/seo.service';
-import { SEO_PAGES } from '../../constants/seo.constants';
+import { SEO_PAGES } from '../../constants/seo/seo.constants';
 
 @Component({
   selector: 'app-pricing',

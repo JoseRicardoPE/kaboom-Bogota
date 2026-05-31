@@ -1,6 +1,6 @@
 import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { SeoService } from '../../services/seo-service/seo.service';
-import { SEO_PAGES } from '../../constants/seo.constants';
+import { SEO_PAGES } from '../../constants/seo/seo.constants';
 import { HeroVideoModel } from '../herovideo/models/hero-video.model';
 import { HeroVideoService } from '../../services/hero-video/hero-video.service';
 import { Herovideo } from '../herovideo/herovideo';
