@@ -51,7 +51,7 @@ export class Services implements OnInit {
   }
 
   heroVideo() {
-    this.heroVideoMedia = this.heroVideoService.getMedia('services');
+    this.heroVideoMedia = this.heroVideoService.getMediaForSection('services');
   }
 
   private unlockBodyScroll() {

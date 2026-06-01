@@ -44,7 +44,7 @@ export class Pricing implements OnInit {
   }
 
   private setHeroVideo(): void {
-    this.heroVideoMedia = this.heroVideoService.getMedia('prices');
+    this.heroVideoMedia = this.heroVideoService.getMediaForSection('prices');
   }
 
   private setSeoData(): void {

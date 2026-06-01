@@ -42,7 +42,7 @@ export class Home {
   }
 
   private setHeroVideo(): void {
-    this.heroVideoMedia = this.heroVideoService.getMedia('home');
+    this.heroVideoMedia = this.heroVideoService.getMediaForSection('home');
   }
 
   private setSeoData(): void {

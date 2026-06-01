@@ -28,8 +28,6 @@ export class Herovideo implements AfterViewInit {
   
   media = input<HeroVideoModel>(undefined!);
 
-  private platformId = inject(PLATFORM_ID);
-
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   @ViewChild('videoElement')
